@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow');
+@import url('https://fonts.googleapis.com/css?family=Life+Savers');
+@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Life+Savers');
+@import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow');
+body{margin:0 !important;}
+ .modal-dialog {
+    top: 21% !important;width:45%;margin:0 auto;vertical-align: middle;
+} 
+
+.modal-open .modal{
+    opacity: 1;
+}

@@ -1,0 +1,408 @@
+
+
+ /* .centered1 {
+    position: absolute;
+    top: 40px;
+    padding-left: 170%;
+    transform: translate(-50%, -50%);
+    
+}
+
+
+.centered2 {
+    position: absolute;
+    top: 40px;
+    padding-left: 160%;
+    transform: translate(-50%, -50%); */
+    /* display: inline-block; */
+
+
+
+/* .containerr-fluid{
+  width: 110%;
+} */
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+.subimage img{
+  /* float: right;  */
+ /* margin: -70px 0px 75px 1200px;   */
+ height: 6%;
+ width: 5%;
+ margin: -7% 0% 1.75% 90%;
+
+}
+
+.frhead{
+  margin-bottom: -1%;
+  width: 100%;
+}
+
+
+.logo img{
+    position:relative;
+display: inline;
+vertical-align: top;
+ margin-top: -100px;
+margin-right: 50%;
+margin-left: 45%;
+float:none;
+z-index: 99999;
+width:116px;
+height: 118px;
+    /* margin: -15% 0% 5% 45%; */
+  }
+  
+
+.navbar1 {
+    width: 100%;
+    background-color: black;
+    overflow: hidden;height:55px;
+    margin-bottom: -0.5%; 
+    margin-top: -20px;
+  }
+  
+  /* Navbar links */
+  .navbar1 a {
+    float: left;
+    text-align: center;
+    padding: 11px;
+    color: white;
+    text-decoration: none;
+    font-size: 25px;
+    font-family: 'PT Sans Narrow', sans-serif;
+  }
+  
+  /* Navbar links on mouse-over */
+  .navbar1 a:hover {
+    color: #f08b18;
+  }
+  
+ .navbar1 .space{
+     margin-left: 80%;
+ }
+ 
+
+.header3{
+ font-size: 25px;
+ font-family: 'Life Savers',serif;
+ font-weight: bold;
+ /* margin-top:-5%; */
+ margin-left: 27px;margin-top:30px;
+  }
+.header3 img{
+
+ margin-top: 1%;
+ width: 192px;
+  height: 32px;
+  margin-left: 12%
+  
+}
+
+.header3 .subim img{
+  float: right;
+  margin-top: -2.5%;
+  margin-right: 28%;
+  width: 192px;
+  height: 32px;
+}
+.centered1 {
+  position: absolute;
+  top: 40px;
+padding-left: 167%;
+ /* padding-left: 170%;  */
+   transform: translate(-50%, -50%); 
+ 
+ 
+}
+
+.centered2 {
+  position: absolute;
+  top: 40px;
+  padding-left: 160%;
+  transform: translate(-50%, -50%);
+  /* display: inline-block; */
+}
+.orderdetails{
+    background-image: url('/assest/images/headerimg1.png');
+    width: 44%;
+    height: 45%;
+    /* margin:0.5% 10% 13% 0%;  */
+    font-family: 'Life Savers', cursive;
+    margin-top: 0%; 
+    text-align: center;
+    font-size: 18pt;
+    margin-left: 3%;
+    font-weight: bold;
+    color: white;
+    padding: 7px;
+    
+    }
+    
+    .urcart{
+      background-image: url('/assets/images/headerimg1.png');
+      width: 44%;
+      height: 45%;
+      /* margin:-3% 10% 0% 0%; */
+      font-family: 'Life Savers', cursive;
+      margin: -61% 20% 30% 53%;
+      text-align: center;
+      font-size: 18pt;
+      font-weight: bold;
+      color: white;
+      padding: 7px;
+      }
+
+      table{
+        margin: -30% 67% 4% 53%;
+        width: 45%;
+        background-color:#f2f2f2;
+        border-collapse: collapse;
+        font-family: 'PT Sans Narrow', sans-serif;
+      }
+     
+      /* .in1{
+       border-radius: 5px;
+       border-color: #f08b18; 
+      }
+     
+      .in1 :after{
+        border-radius: 5px;
+        border-color: #f08b18; 
+        border-width: 2px;
+      } */
+     th{
+       border-bottom-style: dashed;
+       border-bottom-color:grey;
+     }  
+     
+     #orderlist {
+       font-family: 'PT Sans Narrow', sans-serif;;
+       border-collapse: collapse;
+       width: 45%;
+     }
+     
+     #orderlist td, #customers th {
+       /* border: 2px solid #ddd; */
+       padding: 8px;
+     }
+     
+     /* #orderlist tr:nth-child(even){border-bottom-color: black;  border-bottom-style: dashed;}  */
+     
+     #orderlist tr:hover {
+     color: #f08b18;
+     }
+     
+     #orderlist th {
+       padding-top: 12px;
+       padding-bottom: 12px;
+       text-align: left;
+       background-color: #f2f2f2;
+       color: black;
+       /* border-bottom-color: black; */
+     }
+     
+      .radio1{
+       background-color: #f2f2f2;
+       width:45%;
+       margin-left: 3%;
+       font-size: 15pt;
+       font-family: 'PT Sans Narrow', sans-serif;
+       display: inline-block;
+       margin-bottom: 20px;
+       
+      }
+      .cart{
+        margin-top: -47px;
+        }
+        .logout{
+            display: inline-block
+        }
+      .edit{
+        margin: -2% 0% 0% 40%;
+        font-size: 15pt;
+        color: #f08b18;
+        width: 20%;
+        font-family: 'PT Sans Narrow', sans-serif;
+        display: inline-block;
+      }
+      
+      
+      .deliver-header{
+        font-family: 'PT Sans Narrow', sans-serif;
+        font-weight: bold;
+        margin-top: -0.5%;
+        margin-left: 3%;
+        font-size: 15pt;
+        background-color: #f2f2f2;
+        width: 45%;
+      }
+      
+     
+      
+     
+     .from{
+       margin-left: 6%;
+       margin-top: 0.6%
+       /* width: 74%; */
+     }
+     
+     .to{
+       margin-left: 18%;
+       margin-top: -9%;
+       /* width: 65%; */
+       
+     }
+     
+     .when{
+       margin-left: 30%;
+       margin-top: -9%;
+        width: 75%; 
+       
+     }
+     
+     
+     .map{
+     /* height: 2%;
+     width: 70%; */
+     margin-left: 2.9%; 
+     margin-top: -0.2%;
+     }
+     
+     .payemntinfo{
+       font-family: 'Life Savers', cursive;
+       background-image: url('/assets/images/headerimg1.png');
+       text-align: center;
+       font-size: 18pt;
+       font-weight: bold;
+       color: white;
+      /*  padding: 7px; */
+       margin-left:3%;
+       margin-top: -0.5%;
+       width: 44%;
+     }
+     
+     
+     .paymenttable{
+       margin-right: 95%;
+       width:5%;
+     }
+     
+     
+     .place_order{
+       background-color: #f2f2f2;
+       float: right;
+       width: 45%;
+       padding: 5%;
+       margin-top: -3.9%;
+       margin-right: 2%;
+       text-align: center;
+       color: #fbfbfb;
+     }
+      .placeorder1{
+       background-color: #f08b18;
+       width: 45%;
+       font-size: 18pt;
+       font-weight: bold;
+       margin-left: -66%;
+       padding: 2px;
+       border-radius: 6px;
+       display: inline-block;
+     } 
+     .buton{
+       background-color: #f08b18;
+       padding: 5px;
+       border: none;
+       color: white;
+       font-size: 18pt;
+       font-family: 'PT Sans Narrow', sans-serif;
+       
+     }
+     .placeorder2{
+       background-color:#f08b18;
+       width: 45%;
+       font-size: 18pt;
+       font-family: 'PT Sans Narrow', sans-serif;;
+       font-weight: bold;
+       margin-top: -11%;
+       margin-left: 55%;
+       padding: 2px;
+       border-radius: 6px;
+     }
+     
+     button:after{
+       border-color: orange;   
+     }
+     
+     /* th{
+       border-bottom-style: dashed;
+       border-bottom-color: #606060;
+       color: #606060;
+       line-height: 1em;
+     }  */
+  /* .body{
+    overflow: hidden;
+  }  */ 
+     td{
+       color: #606060;
+       padding: 13px;
+     }
+     table{
+       width: 45%;
+       font-family: 'PT Sans Narrow', sans-serif;
+     }
+     
+     p{
+       background-color: #f2f2f2;
+       width: 20%;
+     }
+     
+     
+     
+      .line1, .line2, .line3{text-transform: uppercase;padding:15px;}
+     
+       .numbr{border:1px solid orange;border-radius:2px;padding:3px  !important;}
+       td.linethree, td.lineone, td.linetwo{color:#606060;padding:15px;}
+       img.pls, img.minus{width:16px;height:16px;margin:0.4px 3px;}
+       /* th, td{line-height: 1em;} */
+       
+       .paymenttable tr img{
+         width: 55%;
+       }
+     
+       /* .paymenttable table{
+         width: -20%;
+       } */
+     
+     
+       .paymenttable td{
+         width: 80%;
+       }
+       #payt{
+         width: 910%;
+         margin-top: 0.5%;
+       }
+
+       select{
+           border-color: #f08b18;
+           border-radius: 5px;
+           padding:10px;
+       }
+
+       textarea{
+           border-color: #f08b18;
+           width: 35%;
+           border-radius: 5px;
+       }
+       
+       /* .body{
+         overflow: hidden;
+       } */
+       /* new css */
+     
+     
+     
+     
+     
+     
+     
+
+

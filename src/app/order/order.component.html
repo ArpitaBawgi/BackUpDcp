@@ -1,0 +1,213 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<body class="body" >
+<div class="containerr-fluid">
+  <div class="frhead">
+    <a href="#"> <img src= "../assets/images/DCPcafeHeader.jpg" style="width:100%;height:90%"/> </a>
+    </div>
+    <div class="subimage">
+      <!-- <span class="hidden-xs">{{loggedInUserName}}</span> -->
+      <a><img src="{{imgUrl}}" class="img-circle" style="border-radius: 50%;margin-bottom: 1%;
+       border:solid 2px; height: 70px; width: 70px; margin-right: 10px;" alt="User Image"></a>
+  </div>
+
+  <div class="centered1"> Hello {{loggedInUserName}}
+  </div>
+    <!-- <div class="logo">
+      <a href="#"> <img src="../assets/images/GMClogo.jpg"/></a>
+    </div> -->
+    
+    <div class="navbar1">
+      <a class="menus" href="dashboard"> DASHBOARD</a> 
+      <a class="menus" href="menu"> MENU</a> 
+      <a class="menus" href="order"> ORDERS</a> 
+      <div class="space">
+     <a href="">{{Location.city}}</a>
+     <img class="cart" src="../assets/images/online-shopping-cart.png" (click)="openModal(items)" >
+     <div class="logout">
+        <a href="#"> <img class="icons"  src="../assets/images/logout.png"></a>
+    </div>
+    </div>
+    </div>
+    <!--modal starts-->
+
+<ng-template #modal ng-app="myApp"  ng-controller="aboutController as about"  let-c="close"  let-d="dismiss">
+  <div class="modal-whole"  >
+  <!--  <div class="modal-body"  > -->
+  <div class="shopping-cart">
+   <p style="font-family:'Life Savers', cursive;font-size:22px;background-color:rgb(54, 53, 53);color: whitesmoke ;padding-top: 6px;margin-top: auto;">My Cart</p>
+   </div>
+  <ng-container >
+     <button type="button"  style="border:none !important;    margin-top: -8%;
+     margin-right: 3%;"  class="close"  aria-label="Close"  (click)="d('Cross click')">
+         <span aria-hidden="true">&times;</span>
+             </button>
+  
+             <div class="container-fluid">
+  
+              
+                 <div class="order">
+                 <table class="table3" >
+                  <thead>
+                    <tr>
+                        <th class="line1" style="text-align: left; color: #606060">item</th>
+                        <th class="line2" style="text-align: left; color: #606060">qty</th>
+                        <th class="line3" style="text-align: left; color: #606060">price</th>
+                    </tr>
+                               
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of selectedCartItem " >
+                      
+                        <td class="lineone" >{{item.ProductName}}  </td>
+                        <td class="linetwo"><span class="numbr">{{item.quantity}}<button (click) = "increaseByOne(item)"><img class="pls" src="../assets/images/plus-square-button.png"></button><button [disabled] = "item.quantity==1" (click) = "decreaseByOne(item)"><img class="minus" src="../assets/images/minus-sign-in-a-square-interface-symbol.png"></button></span></td>
+                        <td class="linethree">{{item.Price * item.quantity}}<span class=""></span></td>
+                    </tr>
+                    <tr>
+                      <td  colspan="2" style="text-align:right;font-weight: bold;font-size: 15pt">Total: {{getTotal()}}</td>
+                      <td style="font-weight: bold; font-size: 15pt"></td>
+                    </tr> 
+                   <tbody>
+                      
+                         
+                   
+               </table>
+               
+              <!--  <div class="itemno" >
+                 <p>{{count}} item</p>
+               </div> -->
+                 
+              <!--  <div class="sbtotal">
+               
+                 <h4 class="total">Subtotal : {{getTotal()}} <span style="color:#606060;"></span></h4>
+               </div> -->
+               <br>
+               
+                 <div class="2buttons">
+             <a href="checkout">    <button class="total" class="total" (click)=" d('Cross click') ">CHECKOUT <span aria-hidden="true">&times;</span></button></a>
+             <!-- <a href="dashboard">   <button class="total" class="total"   (click)=" d('Cross click') ">CONTINUE SHOPPING <span aria-hidden="true">&times;</span></button></a> -->
+               </div>
+               </div>
+               </div>
+               <!-- </div> -->
+               
+                                    <!--  <a id="modalbtn" href="associate-promo"  type="button"  (click)="d('Cross click')"  style=""  class="btn btn-primary">OK</a> -->
+                                         </ng-container>
+                                         <!-- </div> -->
+                                         </div>
+                                         </ng-template>
+                                         <!--pop code completed -->
+  
+  <!--modal ends-->
+  
+                                                      <div class="row">
+                                                          <div class="logoimg">
+                                                            <img class="logoimg1" src="../assets/images/GMClogo2.jpg">
+                                                          </div>
+                                                        </div>
+                                                      
+                                                          <div class="row" style="margin-right:none !important;">
+                                                          <div class="header3">
+                                                            <h1 class="newhead">My Orders</h1>
+                                                            <img  class="curls" style="" src="../assets/images/squiggle2.png" class="img1">
+                                                         
+                                                           <img class="curls" style="" src="../assets/images/squiggle2.jpg" class="img2"> 
+                                                          
+                                                           <a class="track" href="order-track"> Track Current Order</a>
+                                                           <div class="place"><img style="width:18px;height:18px;" src="../assets/images/placeholder (4).png"/></div>
+                                                        </div>   
+                                                        </div>
+                                                          <br>
+  
+  
+                                                          <div class="topcomp" style="">
+                                                            <div class="drpinner" style="">
+                                                                <h4 class="drp" style="">Past Orders</h4>
+                                                                <select class="sel" name="My Dropdown" style="" >
+                                                                <option style="display:none;" value="#">Select...</option>
+                                                                <option value="" >View Orders</option>
+                                                               
+                                                                </select>
+                                                                </div> 
+                                                        <div class="drpinner" style="">
+                                                      <h4 class="drp" style="">Meal Type</h4>
+                                                          <select class="sel" name="My Dropdown" style="">
+                                                            <option style="display:none;" value="#">Select...</option>
+                                                            <option value="">BREAKFAST</option>
+                                                            <option value="">LUNCH</option>
+                                                            <option value="">DINNER</option>
+                                                          </select>
+                                                        </div>
+                                                        </div>
+  
+  
+                                                        <!--first order list-->
+  <div class="container">
+      <!-- <div class="first">
+        <img class="blackimg" src="../assets/images/black.PNG">
+        <div class="insider">
+          <h5>Wednesday</h5>
+          <h2>August</h2>
+          <h2>18</h2>
+          <h5>7.35PM</h5>
+        </div>
+      </div> -->
+        <div  class="order">
+        <table class="table3" >
+          <thead>
+              <tr>
+                  <th class="line1" style="">item</th>
+                  <th class="line2" style="">qty</th>
+                  <th class="line3" style="">price</th>
+                         </tr>
+                         
+          </thead>
+          <tbody>
+             
+                  
+              <tr *ngFor="let items of Items.recommendedProducts?.pastOrders?.products">
+                  <td class="lineone">{{items.ProductName}}</td>
+                  <td class="linetwo"><span class="numbr">1<img class="pls" src="../assets/images/plus-square-button.png"><img class="minus" src="../assets/images/minus-sign-in-a-square-interface-symbol.png"></span></td>
+                  <td class="linethree">${{items.Price}}</td>
+                  <!-- <td class="status" [ngClass]="{
+                      'appro':p.status=='APPROVED',
+                      'deny':p.status=='REJECTED',
+                      'pending' :p.status=='PENDING'
+                      }">{{p.status}}</td> -->
+                      <td>
+                      <div class="sbtotal">
+      
+                        <h4 class="total">Subtotal : <span style="color:#606060;">${{items.Price}}</span></h4>
+                        <h4 class="total">Tax : <span style="color:#606060;">${{items.Price}}</span></h4>
+                        <h3 class="total" >Total : <span style="color:#606060;">$9.35</span></h3>
+                        <button class="total">$9.35</button>
+                        <button class="total">reorder</button>
+                      </div>
+                    </td>
+              </tr>
+              <!-- <tr >
+                <td class="lineone">crossiant</td>
+                <td class="linetwo"><span class="numbr">1<img class="pls" src="../assets/images/plus-square-button.png"><img class="minus" src="../assets/images/minus-sign-in-a-square-interface-symbol.png"></span></td>
+                <td class="linethree">$10.00</td> -->
+                <!-- <td class="status" [ngClass]="{
+                    'appro':p.status=='APPROVED',
+                    'deny':p.status=='REJECTED',
+                    'pending' :p.status=='PENDING'
+                    }">{{p.status}}</td> -->
+            <!-- </tr> -->
+      
+          </tbody>
+      </table>
+      
+      <!-- <button class="contactbttn" style="" (click)="show = !show "  (click)="showItems()">{{ show ? 'Show less': 'Show More' }}</button>
+       -->
+      </div>
+      </div>
+      <!--first order list ends-->
+      
+      <!--second order list-->
+      
+      <!--second order list ends-->
+    </div>
+  </body>
+  <router-outlet></router-outlet>
+ 

@@ -1,0 +1,323 @@
+.container {
+  position: absolute;  
+   height: 552px;
+  width: 429px; 
+  margin-left: -15px;
+}
+ 
+ .body-style {
+    position: relative; 
+    height: 681px;
+    width: 1251px;
+    background-repeat: no-repeat;
+    background-size:cover;
+    z-index: 0;
+ }
+  
+  .container .content {
+    position: absolute; /* Position the background text */
+    bottom: 0; /* At the bottom. Use top:0 to append it to the top */
+    background: rgb(255, 255, 255); /* Fallback color */
+    background: rgba(255, 255, 255, 0.8); /* Black background with 0.5 opacity */
+    color: #000000; /* Grey text */
+   /*  width: 41%; */
+    padding: 20px; /* Some padding */
+   /*  margin-bottom: 30px;
+    margin-top: 15px; */
+    margin-left: 175%;
+    margin-bottom: -20%;
+    /* height: 80%; */
+    text-align: center;
+    font-family: 'ink free','inkfree.ttf';
+    width: 475px;
+    height: 531px;
+    font-weight:normal; 
+    
+    
+  }
+ 
+
+  .button {
+    background-color: #f08b18; 
+    border: none;
+    color: white;
+   /*  padding: 15px 32px; */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    /* font-size: 130%; */
+    margin-top: 5%;
+    
+    font-size: 14px;
+   /*  height: 36px;
+    width: 168px; */
+/* height: 109px;
+width: 32px; */
+
+/*  height: 32px;
+width: 109px;  */
+ 
+  }
+
+  /* .font-size-title{
+    font-size: 36px;
+  } */
+
+
+  .text {
+       font-size: 200%; 
+       margin-right: -19px;
+       /* font-size: 36px; */
+     /*  text-decoration: none;
+   
+      font-family: 'ink free','inkfree.ttf';
+      font-weight:normal;  */
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  .web-camera {
+    position: absolute;
+    width: 50%;
+    height: 34%;
+    margin-left: 24%;
+    margin-top: 2%;
+    border: 1px solid  black;
+  } 
+
+  .squiggle-image {
+      margin-left: 10%; 
+      margin-top: 60%;
+       opacity: 0.5;
+      filter: alpha(opacity=100); 
+      background-color: transparent;
+     
+     
+
+  }
+
+  
+  
+ /* img {
+     margin-bottom: 10%;
+ } */
+
+  .container_header {
+    position: absolute; /* Position the background text */
+    top: 0; /* At the bottom. Use top:0 to append it to the top */
+    background: rgb(0, 0, 0); /* Fallback color */
+    background: rgba(0, 0, 0); /* Black background with 0.5 opacity */
+    color: #f1f1f1; /* Grey text */
+    width: 100%; /* Full width */
+    height: 5%;
+    padding: 20px;
+    margin-top: 4%; /* Some padding */
+  }
+
+/*  .gmimage {
+     width: 2%;
+     height: 20%;
+ }
+ */
+
+
+
+    .GM-logo{
+      margin: -5% 0% 5% 45%;
+    }
+
+
+  /*     
+@media screen and (min-width:760px) and (max-width:800px){
+  .container_header{
+    width:165%;
+  }
+
+  .content {
+    margin-left: 170%;
+  }
+}
+
+
+@media screen and (min-width:800px) and (max-width:850px){
+
+  .container_header{
+    width: 158%;
+  }
+
+  .content {
+    margin-left: 170%;
+  }
+
+}
+
+@media screen and (min-width:851px) and (max-width:900px) {
+  .container_header{
+    width: 147%;
+  }
+
+  .content {
+    margin-left: 170%;
+  }
+  
+}
+
+@media screen and (min-width:900px) and (max-width:950px) {
+  .container_header{
+    width: 140%;
+  }
+
+  .content {
+    margin-left: 170%;
+  }
+  
+}
+
+@media screen and (min-width:950px) and (max-width:1000px) {
+  .container_header{
+    width: 134%;
+  }
+
+  .body-style{
+    height: 700px;
+  }
+}
+
+@media screen and (min-width:1001px) and (max-width:1050px) {
+  .container_header{
+    width: 127%;
+  }
+}
+
+@media screen and (min-width:1051px) and (max-width:1100px) {
+  .container_header{
+    width: 119%;
+  }
+}
+
+@media screen and (min-width:1101px) and (max-width:1150px) {
+ 
+  .container_header{
+    width: 119%;
+  }
+
+  .content {
+    margin-left: 175%;
+  }
+}
+
+@media screen and (min-width:1151px) and (max-width:1170px) {
+  
+  .container_header{
+    width: 119%;
+  }
+
+  .body-style{
+    height: 747px;
+    width: 1357px;
+  }
+
+  .content {
+    margin-left: 185%;
+  }
+
+}
+
+@media screen and (min-width:1171px) and (max-width:1240px) {
+  
+  .container_header{
+    width: 108%;
+  }
+}
+
+@media screen and (min-width:1300px) and (max-width:1400px) {
+
+  .body-style{  
+height: 729px;
+width: 1347px;
+}
+
+.content {
+  margin-left: 190%;
+}
+
+.container_header{
+  width: 107%;
+}
+}
+
+ */
+
+
+ 
+ @media screen and (min-width:760px) and (max-width:820px){
+  .container_header {
+    width: 163%;
+  }
+
+  .GM-logo {
+    margin-top: -4%;
+  }
+  
+  }
+
+  @media screen and (min-width:820px) and (max-width:900px){
+
+    .container_header {
+      width: 151%;
+    }
+  }
+
+ @media screen and (min-width:900px) and (max-width:1000px){
+  .container_header {
+    width: 138%;
+  }
+  
+  }
+ 
+@media screen and (min-width:1000px) and (max-width:1100px){
+  
+ .container_header {
+  width: 126%;
+ }
+}
+
+ 
+@media screen and (min-width:1100px) and (max-width:1150px){
+  
+  .container_header {
+    width: 114%;
+  }
+}
+
+
+@media screen and (min-width:1150px) and (max-width:1200px){
+  
+  .content {
+   margin-left: 181%;
+  }
+ }
+ 
+
+
+ @media screen and (min-width:1200px) and (max-width:1250px){
+  
+  .container_header {
+    width: 105%;
+  }
+}
+
+
+@media screen and (min-width:1250px) and (max-width:1300px){
+  
+  .content {
+    margin-left: 184%;
+  }
+}
+
+
+
+
+    

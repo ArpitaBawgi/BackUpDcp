@@ -1,0 +1,397 @@
+<link href="https://fonts.googleapis.com/css?family=Life+Savers" rel="stylesheet">
+
+<body class="body">
+  <div class="frhead">
+    <a href="#"> <img src= "../assets/images/DCPcafeHeader.jpg" style="width:100%;height:90%"/> </a>
+    </div>
+    <div class="subimage">
+
+      <p class="centered1"> Hello {{loggedInUserName}}
+      </p>
+      <!-- <span class="hidden-xs">{{loggedInUserName}}</span> -->
+      <a><img src="{{imgUrl}}" class="img-circle" style="border-radius: 50%;margin-bottom: 1%;
+       border:solid 2px; height: 70px; width: 70px; margin-right: 10px;" alt="User Image"></a>
+
+
+  </div>
+    <div class="logo">
+      <a href="#"> <img src="../assets/images/GMClogo2.jpg"/></a>
+    </div>
+    
+    <div class="navbar">
+      <a href="dashboard"> DASHBOARD</a> 
+      <a href="menu"> MENU</a> 
+      <a href="order"> ORDERS</a> 
+      
+      <div class="space" >
+      <a href="">{{Location.city}}</a>
+      <img class="cart" src="../assets/images/online-shopping-cart.png" (click)="expandModal()" >
+     <div class="logout">
+      <a href="#"> <img src="../assets/images/logout.png"></a>
+    </div>
+    </div>
+    </div>
+
+
+
+
+    <div class="row">
+      <div class="horscroll">
+        <h2 style="display:inline-flex;" (click)="hideShow =!hideShow" class="seen">i</h2>
+        <div style="display:inline-flex;border:1px solid black;padding:9px 5px;" *ngIf="hideShow">
+          <!-- <div style="display:inline-flex;">
+            <img class="legend" src="../assets/images/vegetarianicon.png">
+         <p class="small">Vegetarian</p> 
+        </div> -->
+        <div style="display:inline-flex;">
+          <img class="legend" src="../assets/images/veganicon.png">
+        <p class="small">Vegan</p>
+        </div>
+        <div style="display:inline-flex;">
+          <img class="legend" src="../assets/images/allerywarningicon.png">
+        <p class="small">Allergy Warning</p>
+        </div>
+        </div>         
+        </div>
+    </div>
+    
+      <div class="header3" >&nbsp;
+     My Dashboard
+      <img src="../assets/images/squiggle2.png" />
+    <div class="subim">
+     <img src="../assets/images/squiggle2.jpg"/> 
+     </div>
+    </div>
+    <br>
+  
+  
+    
+    
+  <!-------------------------------------------------------------------------------------------->
+    
+  
+       <!--First Line Starts-->
+<div class="row">
+             <div class="col-3">
+                <div class="container">
+                    <img src="../assets/images/black.PNG"  style="width:100%;height:100%">
+                     <div class="top-left">
+                      <p>{{TempVariable[0].WeatherText}}</p> 
+                    </div> -->
+                     <div class="top-left2">
+                       <p>{{TempVariable[0].Temperature.Metric.Value}}<span>&#176;</span></p> 
+                      </div>
+                    
+  
+                    
+  
+                    <div class="centered"><img src="../assets/images/temperature.png"  style="width:75%;height:75%"></div>
+                  </div>  
+                </div> 
+
+                <!-- 1st row -->
+                   <!--1st product-->
+               
+                <div class="col-9">
+               <div class="first-product col-4" style="margin-top:20px;" *ngFor="let items of Items.recommendedProducts?.weather.products| slice:0:limitValue"   (click) =" continueShopping(items)">
+                <a href="#"> <img class="product-image" src="{{items.ImageURL}}" style="width:60%;height:75%">
+                </a>
+                <p class="product-name">{{items.ProductName}}</p>
+                <button (click)="openModal(items)" class="block1" style="margin-bottom:10px;">{{items.Price}}<span class="vl"></span>ADD TO CART</button>
+
+<!--modal starts-->
+
+<ng-template #modal ng-app="myApp"  ng-controller="aboutController as about"  let-c="close"  let-d="dismiss">
+  <div class="modal-whole"  >
+     <!--  <div class="modal-body"  > -->
+        <div class="shopping-cart">
+            <p style="font-family:Ink Free;font-size: 22px">My CART</p>
+            </div>
+          <ng-container >
+              <button type="button"  style="border:none !important;    margin-top: -8%;
+              margin-right: 3%;"  class="close"  aria-label="Close"  (click)="d('Cross click')">
+                  <span aria-hidden="true">&times;</span>
+                      </button>
+
+                      <div class="container-fluid">
+
+                        <!-- <div class="mini-container"> -->
+                          <!-- <div class="shopping-cart">
+                          <p>SHOPPING CART</p>
+                          </div> -->
+                          <div class="order">
+                          <table class="table3" >
+                            <thead>
+                                <tr>
+                                    <th class="line1" style="">item</th>
+                                    <th class="line2" style="">qty</th>
+                                    <th class="line3" style="">price</th>
+                                           </tr>
+                                           
+                            </thead>
+                            <tbody>
+                               
+                                  
+                                <tr *ngFor="let item of userProducts" >
+                                    <td class="lineone" >{{item.ProductName}}  </td>
+                                    <td class="linetwo"><span class="numbr">{{item.quantity}}<button (click) = "increaseByOne(item)"><img class="pls" src="../assets/images/plus-square-button.png"></button><button [disabled] = "item.quantity==1" (click) = "decreaseByOne(item)"><img class="minus" src="../assets/images/minus-sign-in-a-square-interface-symbol.png"></button></span></td>
+                                    <td class="linethree">{{item.Price * item.quantity}}<span class=""></span></td>
+                                  
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <div class="itemno" >
+                          <p>{{count}} item</p>
+                        </div>
+                          
+                        <div class="sbtotal">
+                        
+                          <h4 class="total">Subtotal : {{getTotal()}} <span style="color:#606060;"></span></h4>
+                        </div>
+                        <br>
+                        
+                          <div class="2buttons">
+                      <a href="checkout">    <button class="total" class="total" (click)=" d('Cross click') ">CHECKOUT <span aria-hidden="true">&times;</span></button></a>
+                         <button class="total" class="total"   (click)=" d('Cross click') ">CONTINUE SHOPPING <span aria-hidden="true">&times;</span></button>
+                        </div>
+                        </div>
+                        </div>
+                        <!-- </div> -->
+                        
+                                             <!--  <a id="modalbtn" href="associate-promo"  type="button"  (click)="d('Cross click')"  style=""  class="btn btn-primary">OK</a> -->
+                                                  </ng-container>
+                                                  <!-- </div> -->
+                                                  </div>
+                                                  </ng-template>
+                                                  <!--pop code completed -->
+
+<!--modal ends-->
+
+
+                <!--<a href='#'><button class="block2">ADD TO CART</button></a>-->
+               </div> 
+               <!-- <button class="contactbttn" style="" (click)="show = !show "  (click)="showItems()">{{ show ? 'Show less': 'Show More' }}</button>   -->
+               </div>
+               
+         </div>
+        <!--First Line ends-->
+
+<hr>
+        <!-- second line starts-->
+
+         <!--First Line Starts-->
+<div class="row">
+  <div class="col-3">
+     <div class="container">
+         <img src="../assets/images/black.PNG"  style="width:100%;height:100%">
+         <div class="top-left">
+           <p>{{Items.recommendedProducts?.time.title}}</p>
+         </div>
+         
+         
+
+         
+
+         <div class="centered"><img src="../assets/sunrise (1).png"  style="width:75%;height:75%"></div>
+       </div>  
+     </div> 
+
+     <!-- 1st row -->
+        <!--1st product-->
+    
+     <div class="col-9">
+    <div class="first-product col-4" style="margin-top:20px;" *ngFor="let items of Items.recommendedProducts?.time.products | slice:0:limitValue"   (click) =" continueShopping(items)">
+     <a href="#"> <img class="product-image" src="{{items.ImageURL}}" style="width:60%;height:75%">
+     </a>
+     <p class="product-name">{{items.ProductName}}</p>
+     <button (click)="openModal(items)" class="block1" style="margin-bottom:10px;">{{items.Price}}<span class="vl"></span>ADD TO CART</button>
+
+<!--modal starts-->
+
+<ng-template #modal ng-app="myApp"  ng-controller="aboutController as about"  let-c="close"  let-d="dismiss">
+<div class="modal-whole"  >
+<!--  <div class="modal-body"  > -->
+<div class="shopping-cart">
+ <p style="font-family:Ink Free;font-size: 22px">My CART</p>
+ </div>
+<ng-container >
+   <button type="button"  style="border:none !important;    margin-top: -8%;
+   margin-right: 3%;"  class="close"  aria-label="Close"  (click)="d('Cross click')">
+       <span aria-hidden="true">&times;</span>
+           </button>
+
+           <div class="container-fluid">
+
+             <!-- <div class="mini-container"> -->
+               <!-- <div class="shopping-cart">
+               <p>SHOPPING CART</p>
+               </div> -->
+               <div class="order">
+               <table class="table3" >
+                 <thead>
+                     <tr>
+                         <th class="line1" style="">item</th>
+                         <th class="line2" style="">qty</th>
+                         <th class="line3" style="">price</th>
+                                </tr>
+                                
+                 </thead>
+                 <tbody>
+                    
+                       
+                     <tr *ngFor="let item of userProducts" >
+                         <td class="lineone" >{{item.ProductName}}  </td>
+                         <td class="linetwo"><span class="numbr">{{item.quantity}}<button (click) = "increaseByOne(item)"><img class="pls" src="../assets/images/plus-square-button.png"></button><button [disabled] = "item.quantity==1" (click) = "decreaseByOne(item)"><img class="minus" src="../assets/images/minus-sign-in-a-square-interface-symbol.png"></button></span></td>
+                         <td class="linethree">{{item.Price * item.quantity}}<span class=""></span></td>
+                       
+                     </tr>
+                 </tbody>
+             </table>
+             
+             <div class="itemno" >
+               <p>{{count}} item</p>
+             </div>
+               
+             <div class="sbtotal">
+             
+               <h4 class="total">Subtotal : {{getTotal()}} <span style="color:#606060;"></span></h4>
+             </div>
+             <br>
+             
+               <div class="2buttons">
+           <a href="checkout">    <button class="total" class="total" (click)=" d('Cross click') ">CHECKOUT <span aria-hidden="true">&times;</span></button></a>
+              <button class="total" class="total"   (click)=" d('Cross click') ">CONTINUE SHOPPING <span aria-hidden="true">&times;</span></button>
+             </div>
+             </div>
+             </div>
+             <!-- </div> -->
+             
+                                  <!--  <a id="modalbtn" href="associate-promo"  type="button"  (click)="d('Cross click')"  style=""  class="btn btn-primary">OK</a> -->
+                                       </ng-container>
+                                       <!-- </div> -->
+                                       </div>
+                                       </ng-template>
+                                       <!--pop code completed -->
+
+<!--modal ends-->
+
+
+     <!--<a href='#'><button class="block2">ADD TO CART</button></a>-->
+    </div> 
+    <!-- <button class="contactbttn" style="" (click)="show = !show "  (click)="showItems()">{{ show ? 'Show less': 'Show More' }}</button>   -->
+    </div>
+    
+</div>
+<!--Second Line ends-->
+             <hr>
+    
+ <!-- Third line-->
+
+  <!--First Line Starts-->
+<div class="row">
+  <div class="col-3">
+     <div class="container">
+         <img src="../assets/images/download1.png"  style="width:100%;height:100%">
+         <div class="top-left">
+           <p>{{Items.recommendedProducts?.trending?.title}}</p>
+         </div>
+        
+
+          
+
+         <div class="centered"><img src="../assets/images/calendar (2).png"  style="width:75%;height:75%"></div>
+       </div>  
+     </div> 
+
+     <!-- 1st row -->
+        <!--1st product-->
+    
+     <div class="col-9">
+    <div class="first-product col-4" style="margin-top:20px;" *ngFor="let items of Items.recommendedProducts?.trending?.products | slice:0:limitValue"   (click) =" continueShopping(items)">
+     <a href="#"> <img class="product-image" src="{{items.ImageURL}}" style="width:60%;height:75%">
+     </a>
+     <p class="product-name">{{items.ProductName}}</p>
+     <button (click)="openModal(items)" class="block1" style="margin-bottom:10px;">{{items.Price}}<span class="vl"></span>ADD TO CART</button>
+
+<!--modal starts-->
+
+<ng-template #modal ng-app="myApp"  ng-controller="aboutController as about"  let-c="close"  let-d="dismiss">
+<div class="modal-whole"  >
+<!--  <div class="modal-body"  > -->
+<div class="shopping-cart">
+ <p style="font-family:Ink Free;font-size: 22px">My CART</p>
+ </div>
+<ng-container >
+   <button type="button"  style="border:none !important;    margin-top: -8%;
+   margin-right: 3%;"  class="close"  aria-label="Close"  (click)="d('Cross click')">
+       <span aria-hidden="true">&times;</span>
+           </button>
+
+           <div class="container-fluid">
+
+             <!-- <div class="mini-container"> -->
+               <!-- <div class="shopping-cart">
+               <p>SHOPPING CART</p>
+               </div> -->
+               <div class="order">
+               <table class="table3" >
+                 <thead>
+                     <tr>
+                         <th class="line1" style="">item</th>
+                         <th class="line2" style="">qty</th>
+                         <th class="line3" style="">price</th>
+                                </tr>
+                                
+                 </thead>
+                 <tbody>
+                    
+                       
+                     <tr *ngFor="let item of userProducts" >
+                         <td class="lineone" >{{item.ProductName}}  </td>
+                         <td class="linetwo"><span class="numbr">{{item.quantity}}<button (click) = "increaseByOne(item)"><img class="pls" src="../assets/images/plus-square-button.png"></button><button [disabled] = "item.quantity==1" (click) = "decreaseByOne(item)"><img class="minus" src="../assets/images/minus-sign-in-a-square-interface-symbol.png"></button></span></td>
+                         <td class="linethree">{{item.Price * item.quantity}}<span class=""></span></td>
+                       
+                     </tr>
+                 </tbody>
+             </table>
+             
+             <div class="itemno" >
+               <p>{{count}} item</p>
+             </div>
+               
+             <div class="sbtotal">
+             
+               <h4 class="total">Subtotal : {{getTotal()}} <span style="color:#606060;"></span></h4>
+             </div>
+             <br>
+             
+               <div class="2buttons">
+           <a href="checkout">    <button class="total" class="total" (click)=" d('Cross click') ">CHECKOUT <span aria-hidden="true">&times;</span></button></a>
+              <button class="total" class="total"   (click)=" d('Cross click') ">CONTINUE SHOPPING <span aria-hidden="true">&times;</span></button>
+             </div>
+             </div>
+             </div>
+             <!-- </div> -->
+             
+                                  <!--  <a id="modalbtn" href="associate-promo"  type="button"  (click)="d('Cross click')"  style=""  class="btn btn-primary">OK</a> -->
+                                       </ng-container>
+                                       <!-- </div> -->
+                                       </div>
+                                       </ng-template>
+                                       <!--pop code completed -->
+
+<!--modal ends-->
+
+
+     <!--<a href='#'><button class="block2">ADD TO CART</button></a>-->
+    </div> 
+    <!-- <button class="contactbttn" style="" (click)="show = !show "  (click)="showItems()">{{ show ? 'Show less': 'Show More' }}</button>   -->
+    </div>
+    
+</div>
+</body>
+<!--Third Line ends-->
+  
+  <router-outlet></router-outlet>
+  

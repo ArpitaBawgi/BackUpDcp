@@ -1,0 +1,56 @@
+[
+  {
+    "id":1,
+    "name":"home",
+    "Title":"Recommendation To Order",
+    "url":"home"
+  },  
+  {
+    "id":3,
+    "name":"BreakFast",
+    "Title":"Breakfast",
+    "url":"product/breakfast"
+  },
+  {
+    "id":4,
+    "name":"SnacksAndSides",
+    "Title":"Sides",
+    "url":"product/sides"
+  },
+  {
+    "id":5,
+    "name":"ChickenAndSandwiches",
+    "Title":"Chicken And Sandwiches",
+    "url":"product/ChickenAndSandwiches"
+  },
+  {
+    "id":6,
+    "name":"DessertsAndShakes",
+    "Title":"Desserts And Shakes",
+    "url":"product/DessertsAndShakes"
+  },
+  {
+    "id":7,
+    "name":"McCafe",
+    "Title":"McCafe",
+    "url":"product/McCafe"
+  }, 
+  {
+    "id":8,
+    "name":"salad",
+    "Title":"Salad",
+    "url":"product/salad"
+  },
+  {
+    "id":7,
+    "name":"Burger",
+    "Title":"Burger",
+    "url":"product/burger"
+  },{
+    "id":2,
+    "name":"Beverages",
+    "Title":"Beverages",
+    "url":"Beverages"
+  }   
+]
+  

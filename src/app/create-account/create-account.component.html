@@ -1,0 +1,120 @@
+<div class="container">
+    <img src="../assets/facial_recognition_loginBG1.jpg" class="body-style">
+
+    <!-- <div class="gmimage">
+              <img src="assets/GMClogo.jpg">
+            </div> -->
+
+    <div class="content">
+        <div class="great-to-see-you">
+            <h1>Welcome to our cafe!</h1>
+        </div>
+        <div class="font-size-sign">
+            <p>Create an account by entering the information below</p>
+        </div>
+        <div class="form">
+
+            First Name
+            <font color="red">*</font>&nbsp;&nbsp;<input type="text" style="border:1px solid #f08b18" align="right" name="firstname" [(ngModel)]="userdata.Name" required="required">
+            <br>
+            <br> Last Name
+            <font color="red">*</font>&nbsp;&nbsp;<input type="text" style="border:1px solid #f08b18" align="right" name="lastname" [(ngModel)]="userdata.lastname" required="required">
+            <br>
+            <br> Email
+            <font color="red"></font>&nbsp;&nbsp;<input type="email" style="border:1px solid #f08b18" align="right" name="email">
+            <br>
+            <br> Username
+            <font color="red"></font>&nbsp;&nbsp;<input type="text" style="border:1px solid #f08b18" align="right" name="username">
+            <br>
+            <br> Password
+            <font color="red"></font>&nbsp;&nbsp;<input type="text" style="border:1px solid #f08b18" align="right" name="password">
+            <br>
+
+            <br>
+        </div>
+
+        <div class="allergies" style="font-family: 'PT Sans Narrow', sans-serif" multiple name="selectedAllergy" [(ngModel)]="userdata.orders" tabindex="-1">
+            <p>Select any allergies / dietary restrictions(optional)</p>
+        </div>
+
+        <div class="checkbox">
+            
+
+
+        </div>
+
+
+        <!-- <div class="allergies " style="font-family: 'PT Sans Narrow', sans-serif">
+            <div>
+                <form [formGroup]="form" (ngSubmit)="submit()">
+                    <div>
+                        <label formArrayName="orders" *ngFor="let order of form.controls.orders.controls; let i = index">
+                          <input type="checkbox" [formControlName]="i" class="chkbx" >
+                         {{userdata.orders[i].name}} -->
+                        <!-- <table>
+                            <tr>
+                                <td>
+                                        {{userdata.orders[i].name}}
+                                </td>
+                            </tr>
+                            <tr>
+                          </tr>
+                        </table>
+                        </label>
+                    </div>
+
+                </form>
+
+            </div>
+        </div> --> 
+<div class="allergy">
+        <div class="form-group has-feedback ">
+            <select class="form-control select2 select2-hidden-accessible" multiple name="selectedAllergy" [(ngModel)]="userdata.FoodAllergy"
+              style="width: 100%;" tabindex="-1">
+              <!-- <option *ngFor="let allergy of foodAllergyNames" [ngValue]="allergy">
+              {{allergy}}
+            </option> -->
+              <option value="">Select Food Allergy</option>
+              <option value="Peanuts">Peanuts</option>
+              <option value="Onion">Onion</option>
+              <option value="Sugar">Sugar</option>
+              <option value="Gluten">Gluten</option>
+              <option value="Lactose">Lactose</option>
+              <option value="Nuts">Nuts</option>
+            </select>
+          </div>
+        </div>
+    
+
+
+        <div class="mini-container">
+
+            <div class="squiggle-image">
+                <img src="../assets/squiggle2.jpg" height="32" width="195">
+                <!--width=40 and height=320-->
+            </div>
+            <div class="cancel-buttton">
+                <button class="button" value="button" style="background-color: #ff0000"><a 
+            style="text-decoration: none;color: #ffffff;">CANCEL</a></button>
+            </div>
+
+            <div class="button-create">
+                <button class="button" value="button" (click)="getFormRegisterData()">SUBMIT</button>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+<div class="container_header">
+    <div>
+        <img src="../assets/GMClogo2.jpg" height="192" width="195" style="z-index: 1;
+                position: relative;    margin-top: -5%;
+                margin-left: 15%;">
+    </div>
+</div>
+
+
+
+<router-outlet></router-outlet>

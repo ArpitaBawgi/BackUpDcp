@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<!-- header starts -->
+
+<!--   <ul class="mainheader_links" id="navi">
+    
+        <img class="gmlogo" src="assets/GMClogo.jpg">
+
+</ul> -->
+
+<!--
+header ends
+-->
+<!-- <body background="../assets/facial_recognition_loginBG1.jpg"> -->
+
+<body>
+
+    <div class="container">
+        <img src="../assets/facial_recognition_loginBG1.jpg" class="body-style">
+
+        <!-- <div class="gmimage">
+              <img src="assets/GMClogo.jpg">
+            </div> -->
+
+
+        <div class="content">
+            <div class="font-size-title">
+                <h1>It's great to see you!</h1>
+            </div>
+
+            <!--  <div class="web-camera" height="192" width="195" >
+                <ng-container *ngIf="camPlaceHolder">
+                    <ack-webcam [(ref)]="webcam" [options]="camOptions" (success)="onCamSuccess($event)" (catch)="onCamError($event)" class="webcam"></ack-webcam>
+            </ng-container>  
+             </div>  -->
+
+
+            <div class="register-box" *ngIf="registerPanel">
+
+
+                <div class="register-box-body web-camera" *ngIf="defaultPanel" style="border-radius: 15px; ">
+                    <p class="login-box-msg"></p>
+
+                    <span style="margin-left: 1px; padding-top: 30px;">
+            
+                  <webcam [width]="210" [height]="155" [trigger]="triggerObservable" (imageCapture)="handleImage($event,'login')"
+                    *ngIf="showWebcam" [allowCameraSwitch]="allowCameraSwitch" [switchCamera]="nextWebcamObservable" [videoOptions]="videoOptions"
+                    (cameraSwitched)="cameraWasSwitched($event)" (initError)="handleInitError($event)"></webcam>
+            
+                 </span>
+                </div>
+            </div>
+            <form>
+                <div class="form-group has-feedback">
+                    <input type="hidden" name="FaceImage" [(ngModel)]="userdata.FaceImage" />
+                    <!-- <input type="text" class="form-control" placeholder="Enter Your Name" name="Name" id="Name" [(ngModel)]="userdata.Name" 
+                  minlength=3 required="required"> -->
+                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                </div>
+
+                <div class="login-credentials">
+                    <a href="login-credentials" style="text-decoration: none; color: #f08b18; ">Login with credentials</a>
+                </div>
+                <div class="pencil">
+                    <img src="../assets/pencil.png" height="16" width="16">
+                </div>
+                <div class="login-fingrprint ">
+                    <img src="../assets/touch.png" height="16" width="16">
+
+                    <button class="btn" style="text-decoration: none; color: #f08b18;" (click)="triggerSnapshot()">Recommend Me</button>
+                </div>
+                <div class="fingerprint">
+                    <!-- <img src="../assets/touch.png" height="18" width="18"> -->
+                </div>
+
+            </form>
+            <div class="squiggle-image">
+                <img src="../assets/squiggle2.jpg" height="32" width="195">
+                <!--width=40 and height=320-->
+            </div>
+
+            <div class="text">
+                <h3>Are you new here?</h3>
+            </div>
+
+
+            <button class="button" value="button"><a href="create-account" style="color: #ffffff; text-decoration: none;">CREATE AN ACCOUNT</a></button>
+
+
+        </div>
+
+    </div>
+
+
+    <div>
+
+        <div class="container_header">
+            <div>
+                <img src="../assets/GMClogo2.jpg" height="192" width="195" style="z-index: 1;
+              position: relative;    margin-top: -5%;
+              margin-left: 15%;">
+            </div>
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>

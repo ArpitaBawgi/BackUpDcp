@@ -1,0 +1,353 @@
+<head>
+  <link href= "https://fonts.googleapis.com/css?family=Life+Savers" rel="stylesheet"> 
+
+</head>
+<body class="body">
+  <div class="frhead">
+    <a href="#"> <img src= "../assets/images/DCPcafeHeader.jpg" style="width:100%;height:90%"/> </a>
+    </div>
+    <div class="subimage">
+
+      
+      <!-- <span class="hidden-xs">{{loggedInUserName}}</span> -->
+      <a><img src="{{imgUrl}}" class="img-circle" style="border-radius: 50%;margin-bottom: 1%;
+       border:solid 2px; height: 70px; width: 70px; margin-right: 10px;" alt="User Image"></a>
+    </div>
+
+    <div class="centered1"> Hello {{loggedInUserName}} </div>
+    
+
+
+    <div class="navbar1">
+      <a href="dashboard"> DASHBOARD</a> 
+      <a href="menu"> MENU</a> 
+      <a href="order"> ORDERS</a> 
+      <div class="space">
+      <a href="">{{Location.city}}</a>
+      
+      
+      <img class="cart" src="../assets/images/online-shopping-cart.png" (click)="openModal(items)" >
+      <div class="logout"><a href="#"> <img  src="../assets/images/logout.png"></a></div>
+    </div>
+    
+  </div>
+    <div class="logo">
+      <a href="#"> <img src="../assets/images/GMClogo2.jpg"/></a>
+    </div>
+    
+   
+    
+    
+     <div class="header3" display="inline-block;" >
+       Checkout
+      <img src="../assets/images/squiggle2.png" display="inline-block;" />
+    <div class="subim">
+     <img src="../assets/images/squiggle2_flipped_edited.png" display="inline-block;"/> 
+     </div>
+    </div>   
+    
+   
+    
+    
+<!-- <div class="frhead">
+  <a href="#"> <img src= "../assets/DCPcafeHeader.jpg" style="width:100%;height:100%"/> </a>
+  </div>
+  <div class="subimage">
+
+    <p class="centered1"> Hello {{loggedInUserName}}
+    </p> -->
+    <!-- <span class="hidden-xs">{{loggedInUserName}}</span> -->
+    <!-- <a><img src="{{imgUrl}}" class="img-circle" style="border-radius: 50%;margin-bottom: 1%;
+     border:solid 2px; height: 70px; width: 70px; margin-right: 10px;" alt="User Image"></a>
+ -->
+
+<!-- </div>
+  <div class="logo">
+    <a href="#"> <img src="../assets/GMClogo2.jpg"/></a>
+  </div>
+  
+  <div class="navbar1">
+    <a href="dashboard"> Dashboard</a> 
+    <a href="menu"> Menu</a> 
+    <a href="order"> Orders</a>
+
+    <div class="space">
+      <a href="">{{Location.city}}</a>
+       <a href="#">  <img class="icons" src="../assets/images/online-shopping-cart.png" ></a> 
+       <a href="#"> <img class="icons"  src="../assets/images/logout.png"></a>
+      
+      </div>
+  </div>
+  
+  
+  <div class="header3">&nbsp;
+     Checkout  &nbsp;&nbsp;&nbsp;
+    <img src="../assets/squiggle2.png" />
+  <div class="subim">
+   <img src="../assets/squiggle2.jpg"/> 
+   </div>
+  </div> -->
+
+  <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+  <!-- <div class="orderdetails">
+    Order Details
+</div>  -->
+
+<div class="radio1">
+    <input type="radio" name="order" value="Takeout">Takeaway
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="radio" name="order" value="Delivery">Delivery &nbsp;&nbsp; 
+      <div class="edit">
+        Edit
+        </div>
+</div>
+
+ <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<!-- <div class="deliver">
+  <img src="../assets/images/shop (1).png"/></div>
+  <div class="d1">Deliver from
+     <p style="font-size:80%;" >
+     Good Morning Cafe <br>
+     821 W Halsted <br>
+     Chicago ,IL,60618<br>
+     631-293-3123
+   </p></div>
+   
+
+   <div class="deliverto">
+      <img src="../assets/images/pointer.png"/></div>
+      <div class="d2">Deliver To
+       <p style="font-size:80%;" padding="33px">
+         Sarah Barry <br>
+         1236 N Damen Ave <br>
+         Chicago ,IL,60618<br>
+         321-456-7890
+       </p>
+       </div>
+  
+
+       <div class="deliverwhen">
+          <img src="../assets/images/calendar (5).png"/></div>
+          <div class="d3">Deliver When
+           <p style="font-size:75%;" padding="50px">
+             Sarah Barry <br>
+             ASAP (35-45 minutes)
+             <br>
+             <br>
+             <br>
+             
+           </p>
+           </div>  -->
+
+<div class="deliver-header">
+  <img src="/assets/images/shop (1).png">&nbsp; Deliver from
+  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <img src="/assets/images/pointer.png"/> &nbsp;Deliver To
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="/assets/images/calendar (5).png"/> &nbsp; Deliver When
+</div>
+
+<div class="deliver-address">
+  <!-- <div class="extra"></div> -->
+  <div class="from"><p>Good Morning Cafe <br>
+    821 W Halsted <br>
+    Chicago ,IL,60618<br>
+    631-293-3123</p>
+  </div>
+
+  <div class="to">
+      <p>Sarah Barry <br>
+      1236 N Damen Ave <br>
+      Chicago ,IL,60618<br>
+      321-456-7890
+    </p>
+  </div>
+
+  <div class="when">
+      <p>
+          Sarah Barry <br>
+          ASAP (35-45 minutes)
+          <br>
+          <br>
+          <br>
+      </p>
+  </div>
+   
+</div>
+
+
+
+<div class="map">
+  <img src="../assets/images/map.png" width="46.5%"/>
+</div>
+
+<div class="payemntinfo">
+    Payment Information
+
+</div>
+
+ <!-- _________________________ -->
+ <div class="paymenttable">
+  <table id="payt">
+ <tr>
+   <td>
+   Cardholder Name
+  </td>
+<td>
+  <select name="Cardholder Name" style="width: 330px;"></select>
+  </td>
+  
+ </tr>
+ <tr>
+   <td></td>
+   &nbsp;&nbsp;&nbsp;
+  <img src="../assets/images/card.jfif"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Add New Card
+ </tr>
+
+ <tr>
+   <td>
+   Card Number  
+  </td>
+  <td>
+     <textarea class="in1" type="number" name="cardnum" maxlength="16" minlength="16" required></textarea>
+    </td>
+ </tr>
+ <tr>
+   <td>
+   Expiration Date
+  </td>
+  <td>
+   <textarea class="in1" type="number" required></textarea> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   CVV  &nbsp;&nbsp;
+   <textarea class="in1" type="text" name="cvv" maxlength="3" size="4"></textarea>
+  </td>
+ </tr>
+  </table>
+</div>
+<!-- </header>
+   &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;
+   Cardholder Name 
+   &nbsp; &nbsp;  &nbsp; &nbsp;
+   &nbsp; &nbsp;  &nbsp; &nbsp;
+   <select name="Cardholder Name" style="width: 350px;" >
+  <option> </option>
+  <option> </option>
+  <option> </option>
+</select>
+</div>
+   <div class="bg1">
+  <div class="card">
+    <img src="../assets/images/card.jfif">
+  </div>  
+</div>
+   <div class="line">
+    Add New card
+   </div>
+<br>
+<div class="bg">
+  <div class="number">
+   Card Number
+  </div> 
+    <div class="box">
+      <input type="text">
+    </div>
+  </div>
+
+    <div class="Card-date">
+        Expiration Date
+       </div> 
+         <div class="box1">
+           <input type="text">
+         </div>
+    <div
+    <div class="cvv">
+    CVV
+   </div>
+   <div class ="box2">
+      <input type="text">
+    </div> -->
+
+
+<div class="urcart">
+    Your Cart
+</div>
+    
+
+<div class="order">
+  <table class="table3" >
+    <thead>
+        <tr>
+            <th class="line1" style="text-align: left; color: #606060">item</th>
+            <th class="line2" style="text-align: left; color: #606060">qty</th>
+            <th class="line3" style="text-align: left; color: #606060">price</th>
+        </tr>
+                   
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of selectedCartItem " >
+          
+            <td class="lineone" >{{item.ProductName}}  </td>
+            <td class="linetwo"><span class="numbr">{{item.quantity}}<button (click) = "increaseByOne(item)"><img class="pls" src="../assets/images/plus-square-button.png"></button><button [disabled] = "item.quantity==1" (click) = "decreaseByOne(item)"><img class="minus" src="../assets/images/minus-sign-in-a-square-interface-symbol.png"></button></span></td>
+            <td class="linethree">{{item.Price * item.quantity}}<span class=""></span></td>
+        </tr>
+       
+       <!--      
+        <tr>
+            <td class="lineone">{{selectedCartItem}}</td>
+            <td class="linetwo"><span class="numbr">1 &nbsp;<img class="pls" src="../assets/images/plus-square-button.png">&nbsp;<img class="minus" src="../assets/images/minus-sign-in-a-square-interface-symbol.png"></span></td>
+            <td class="linethree">$4.00</td>
+             
+        </tr>
+        <tr style=" border-bottom-style: dashed;
+        border-bottom-color:grey;">
+          <td class="lineone">medium orange</td>
+          <td class="linetwo"><span class="numbr">1 &nbsp;<img class="pls" src="../assets/images/plus-square-button.png">&nbsp;<img class="minus" src="../assets/images/minus-sign-in-a-square-interface-symbol.png"></span></td>
+          <td class="linethree">$10.00</td>
+          
+      </tr>
+
+      <tr>
+        <td colspan="2">
+          Subtotal
+        </td>
+        <td> $7.5</td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          Tax
+        </td>
+        <td> $1.5</td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          Delivery
+        </td>
+        <td> $3.5</td>
+      </tr>
+      <tr style=" border-bottom-style: dashed;
+      border-bottom-color:grey;">
+        <td colspan="2">
+          Tip
+        </td>
+        <td> $2.5</td>
+      </tr>-->
+      <tr>
+        <td  colspan="2" style="text-align:right;font-weight: bold;font-size: 15pt">Total: {{getTotal()}}</td>
+        <td style="font-weight: bold; font-size: 15pt"></td>
+      </tr> 
+
+    </tbody>
+</table>  
+
+<div class="place_order">
+  <div class="placeorder1">
+     <a href="dashboard"><button class="buton">Continue Shopping</button></a>
+  </div>
+    &nbsp;
+    <div class="placeorder2">
+    <a href="order-track"> <button class="buton">Place Order </button> </a>
+    </div>
+</div>
+</div>
+</body>

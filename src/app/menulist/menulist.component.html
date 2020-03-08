@@ -1,0 +1,733 @@
+
+<head>
+  <link href= "https://fonts.googleapis.com/css?family=Life+Savers" rel="stylesheet"> 
+
+</head>
+<body class="body">
+  <div class="frhead">
+    <a href="#"> <img src= "../assets/images/DCPcafeHeader.jpg" style="width:100%;height:90%"/> </a>
+    </div>
+    <div class="subimage">
+
+      <p class="centered1"> Hello {{loggedInUserName}}
+      </p>
+      <!-- <span class="hidden-xs">{{loggedInUserName}}</span> -->
+      <a><img src="{{imgUrl}}" class="img-circle" style="border-radius: 50%;margin-bottom: 1%;
+       border:solid 2px; height: 70px; width: 70px; margin-right: 10px;" alt="User Image"></a>
+  
+  
+  </div>
+    <div class="navbar1">
+      <a href="dashboard"> DASHBOARD</a> 
+      <a href="menu"> MENU</a> 
+      <a href="order"> ORDERS</a> 
+      <div class="space">
+      <a href="">{{Location.city}}</a>
+      
+      
+      <img class="cart" src="../assets/images/online-shopping-cart.png" (click)="openModal(items)" >
+      <div class="logout"><a href="#"> <img  src="../assets/images/logout.png"></a></div>
+    </div>
+    
+  </div>
+    <div class="logo">
+      <a href="#"> <img src="../assets/images/GMClogo2.jpg"/></a>
+    </div>
+    
+   
+    
+    
+     <div class="header3" display="inline-block;" >
+       Menu 
+      <img src="../assets/images/squiggle2.png" display="inline-block;" />
+    <div class="subim">
+     <img src="../assets/images/squiggle2_flipped_edited.png" display="inline-block;"/> 
+     </div>
+    </div> 
+    
+    
+   
+    
+    <!-- <div class="frhead">
+  <a href="#"> <img src= "../assets/DCPcafeHeader.jpg" style="width:100%;height:90%"/> </a>
+  </div>
+  <div class="subimage">
+
+    <p class="centered1"> Hello {{loggedInUserName}}
+    </p>
+     <span class="hidden-xs">{{loggedInUserName}}</span> -->
+    <!-- <a><img src="{{imgUrl}}" class="img-circle" style="border-radius: 50%;margin-bottom: 1%;
+     border:solid 2px; height: 70px; width: 70px; margin-right: 10px;" alt="User Image"></a>
+</div>
+  <div class="logo">
+    <a href="#"> <img src="../assets/GMClogo2.jpg"/></a>
+  </div>  -->
+  
+  <!-- <div class="navbar1">
+    <a href="dashboard"> Dashboard</a> 
+    <a href="menu"> Menu</a> 
+    <a href="order"> Orders</a> 
+    <div class="space">
+     <a href="">{{Location.city}}</a>
+        <img class="cart" src="../assets/images/online-shopping-cart.png" (click)="openModal()" >
+        <div class="logout">
+           <a href="#"> <img class="icons"  src="../assets/images/logout.png"></a>
+       </div>
+       </div>
+  </div> -->
+  <!--modal starts-->
+
+<ng-template #modal1 ng-app="myApp"  ng-controller="aboutController as about"  let-c="close"  let-d="dismiss">
+  <div class="modal-whole"  >
+  <!--  <div class="modal-body"  > -->
+  <div class="shopping-cart">
+   <p style="font-family: 'Life Savers', cursive;font-size: 22px">My Cart</p>
+   </div>
+  <ng-container >
+     <button type="button"  style="border:none !important;    margin-top: -8%;
+     margin-right: 3%;"  class="close"  aria-label="Close"  (click)="d('Cross click')">
+         <span aria-hidden="true">&times;</span>
+             </button>
+  
+             <div class="container-fluid">
+  
+              
+                 <div class="order">
+                 <table class="table3" >
+                  <thead>
+                    <tr>
+                        <th class="line1" style="text-align: left; color: #606060">item</th>
+                        <th class="line2" style="text-align: left; color: #606060">qty</th>
+                        <th class="line3" style="text-align: left; color: #606060">price</th>
+                    </tr>
+                               
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of selectedCartItem " >
+                      
+                        <td class="lineone" >{{item.ProductName}}  </td>
+                        <td class="linetwo"><span class="numbr">{{item.quantity}}<button (click) = "increaseByOne(item)"><img class="pls" src="../assets/images/plus-square-button.png"></button><button [disabled] = "item.quantity==1" (click) = "decreaseByOne(item)"><img class="minus" src="../assets/images/minus-sign-in-a-square-interface-symbol.png"></button></span></td>
+                        <td class="linethree">{{item.Price * item.quantity}}<span class=""></span></td>
+                    </tr>
+                    <tr>
+                      <td  colspan="2" style="text-align:right;font-weight: bold;font-size: 15pt">Total: {{getTotal()}}</td>
+                      <td style="font-weight: bold; font-size: 15pt"></td>
+                    </tr> 
+                   <tbody>
+                      
+                         
+                   
+               </table>
+               
+              <!--  <div class="itemno" >
+                 <p>{{count}} item</p>
+               </div> -->
+                 
+              <!--  <div class="sbtotal">
+               
+                 <h4 class="total">Subtotal : {{getTotal()}} <span style="color:#606060;"></span></h4>
+               </div> -->
+               <br>
+               
+                 <div class="twobuttons">
+             <a href="checkout">    <button class="total" class="total" (click)=" d('Cross click') ">CHECKOUT <span aria-hidden="true">&times;</span></button></a>
+            <!--  <a href="dashboard">   <button class="total" class="total"   (click)=" d('Cross click') ">CONTINUE SHOPPING <span aria-hidden="true">&times;</span></button></a> -->
+               </div>
+               </div>
+               </div>
+               <!-- </div> -->
+               
+                                    <!--  <a id="modalbtn" href="associate-promo"  type="button"  (click)="d('Cross click')"  style=""  class="btn btn-primary">OK</a> -->
+                                         </ng-container>
+                                         <!-- </div> -->
+                                         </div>
+                                         </ng-template>
+                                         <!--pop code completed -->
+  
+  <!--modal ends-->
+
+<div class="row">
+  <div class="horscroll">
+    <h2 style="display:inline-flex;" (click)="hideShow =!hideShow" class="seen">i</h2>
+    <div style="display:inline-flex;border:1px solid black;padding:9px 5px;" *ngIf="hideShow">
+      <!-- <div style="display:inline-flex;">
+        <img class="legend" src="../assets/images/vegetarianicon.png">
+     <p class="small">Vegetarian</p> 
+    </div> -->
+    <div style="display:inline-flex;">
+      <img class="legend" src="../assets/images/veganicon.png">
+    <p class="small">Vegan</p>
+    </div>
+    <div style="display:inline-flex;">
+      <img class="legend" src="../assets/images/allerywarningicon.png">
+    <p class="small">Allergy Warning</p>
+    </div>
+    </div>
+    </div>
+
+</div>
+
+ <!--  <div class="header3">&nbsp;
+     Menu  &nbsp;&nbsp;&nbsp;
+    <img src="../assets/squiggle2.png" >
+  <div class="subim">
+   <img src="../assets/squiggle2.jpg"> 
+   </div>
+  </div> -->
+  <br>
+
+  <div class="menunavbar">
+    &nbsp;
+    <a href="menu"> Breakfast</a> 
+    <a href="scramble"> Scrambles</a> 
+    <a href="omlette"> Omelettes</a>
+    <a href="oatmeal"> oatmeal</a> 
+    <a href="griddle"> griddles</a> 
+    <a href="sandwich"> sandwiches</a>
+    <a href="soups"> soups</a> 
+    <a href="salad"> salads</a> 
+    <a href="skillet"> skillets</a>
+    <a href="vegan"> vegan</a> 
+    <a href="veggie"> veggie</a> 
+  </div>
+  <br>
+
+  <!-- <div class="menulist">
+    <table id="menulisttable">
+      <tr>
+        <th style="width: 100%; font-family: 'PT Sans Narrow', sans-serif;font-size: 18pt">
+          BREAKFAST
+        </th>
+      </tr>
+      <tr>My Usuals</tr>
+      <tr>Choice of Bread,choice of meat,choice of eggs</tr>
+      <tr> Big Good Morning</tr>
+      <tr> 3 eggs,toast,sausage,ham,potatoes,bacon</tr>
+      <tr>Acai Breakfast Bowl</tr>
+      <tr>Acai Berries, Rasberries, Pineapple, Almonds</tr>
+      <tr>Crazy Crepes</tr>
+      <tr>Choice of any 4 crepes</tr>
+      <tr>Day Break</tr>
+      <tr>2 eggs, 2 Buttermilk pancakes,choice of meat</tr>
+    </table>
+  </div> -->
+
+<div class=breakfast>Breakfast</div>
+
+    <!-- <div class="container">
+      <h2>My Usuals</h2>
+      <p></p> 
+      <div class="lines"></div>
+    </div> -->
+    <div class="table1">
+      <table>
+        <tr *ngFor="let items of dataVariable.allProducts ">
+        <th>
+     
+          {{items.ProductName}}<img src="../assets/arrow-right-circle.png" (click)="openModal('Modal')" class="arrow"> <br>
+            <ng-template #modal ng-app="myApp"  ng-controller="aboutController as about"  let-c="close"  let-d="dismiss">
+                <div class="view-modal">
+              <div class="modal-whole"  >
+                    <div class="modal-body"  >
+                        <ng-container >
+                            <button type="button"  style="border:none !important;"  class="close"  aria-label="Close"  (click)="d('Cross click')">
+                                <span aria-hidden="true">&times;</span>
+                                    </button>
+        <div class="container-fluid2">
+        
+            <div class="subcontainer">
+                <div class="heading">My Usual</div>
+                <div class="subheading">Choice of Breads,choice of meat,choice of eggs</div>
+              </div>
+                  <div class="content">
+                      <div class="choice-of-egg">
+                        <p style="font-family: 'Life Savers', cursive;">Choice of egg</p>
+                      </div>
+                      <div class="checkbox-1">
+                        <table class="table12">
+                          <tr style="padding-bottom:1%">
+                            <td>
+                              <label class="container-checkbox">Over Easy
+                                <input type="checkbox" unchecked="unchecked">
+                                <span class="checkmark"></span>
+                              </label>             
+                            </td>
+          
+                            <td>
+                              <label class="container-checkbox">Poached
+                                <input type="checkbox" unchecked="unchecked">
+                                <span class="checkmark"></span>
+                              </label>
+                            </td>
+          
+                            <td>
+                              <label class="container-checkbox">No Eggs
+                                <input type="checkbox" unchecked="unchecked">
+                                <span class="checkmark"></span>
+                              </label>                  
+                            </td>
+                        </tr>
+                          
+          
+                        <tr>
+                            <td>
+                              <label class="container-checkbox">Scrambled
+                                <input type="checkbox" unchecked="unchecked">
+                                <span class="checkmark"></span>
+                              </label>                  
+                            </td>
+          
+                            <td>
+                              <label class="container-checkbox">Gluten Free
+                                <input type="checkbox" unchecked="unchecked">
+                                <span class="checkmark"></span>
+                              </label>                     
+                            </td>
+          
+                            <td>
+                              <label class="container-checkbox">FruitCup
+                                <input type="checkbox" unchecked="unchecked">
+                                <span class="checkmark"></span>
+                              </label>                   
+                            </td>
+                        </tr>
+          
+          
+                        <tr>
+                            <td>
+                              <label class="container-checkbox">Boiled
+                                <input type="checkbox" unchecked="unchecked">
+                                <span class="checkmark"></span>
+                              </label>
+                              
+                            </td>
+          
+                            <td>
+                              <label class="container-checkbox">Egg Whites
+                                <input type="checkbox" unchecked="unchecked">
+                                <span class="checkmark"></span>
+                              </label>
+                              
+                            </td>
+          
+                        </tr>
+                        </table>
+          
+                      </div>
+          
+          
+                      <div class="choice-of-meat">
+                          <p>Choice of Meat</p>
+                        </div>
+                        <div class="checkbox-2">
+                          <table >
+                            <tr>
+                              <td>
+                                <label class="container-checkbox">Bacon
+                                  <input type="checkbox" unchecked="unchecked">
+                                  <span class="checkmark"></span>
+                                </label>             
+                              </td>
+            
+                              <td>
+                                <label class="container-checkbox">Sausage
+                                  <input type="checkbox" unchecked="unchecked">
+                                  <span class="checkmark"></span>
+                                </label>
+                              </td>
+            
+                              <td>
+                                <label class="container-checkbox">FruitCup
+                                  <input type="checkbox" unchecked="unchecked">
+                                  <span class="checkmark"></span>
+                                </label>                  
+                              </td>
+                          </tr>
+                            
+            
+                          <tr>
+                              <td>
+                                <label class="container-checkbox">Ham
+                                  <input type="checkbox" unchecked="unchecked">
+                                  <span class="checkmark"></span>
+                                </label>                  
+                              </td>
+            
+                              <td>
+                                <label class="container-checkbox">No meat
+                                  <input type="checkbox" unchecked="unchecked">
+                                  <span class="checkmark"></span>
+                                </label>                     
+                              </td>
+                          </tr>
+            
+            
+                          
+                          </table>
+            
+                        </div>
+          
+          
+                        <div class="choice-of-toast">
+                            <p>Choice of toast</p>
+                          </div>
+                          <div class="checkbox-3">
+                            <table >
+                              <tr>
+                                <td>
+                                  <label class="container-checkbox">Italian
+                                    <input type="checkbox" unchecked="unchecked">
+                                    <span class="checkmark"></span>
+                                  </label>             
+                                </td>
+              
+                                <td>
+                                  <label class="container-checkbox">7Grain
+                                    <input type="checkbox" unchecked="unchecked">
+                                    <span class="checkmark"></span>
+                                  </label>
+                                </td>
+              
+                                <td>
+                                  <label class="container-checkbox">No Toast
+                                    <input type="checkbox" unchecked="unchecked">
+                                    <span class="checkmark"></span>
+                                  </label>                  
+                                </td>
+                            </tr>
+                              
+              
+                            <tr>
+                                <td>
+                                  <label class="container-checkbox">Asiago
+                                    <input type="checkbox" unchecked="unchecked">
+                                    <span class="checkmark"></span>
+                                  </label>                  
+                                </td>
+              
+                                <td>
+                                  <label class="container-checkbox">Cinnamon swirl
+                                    <input type="checkbox" unchecked="unchecked">
+                                    <span class="checkmark"></span>
+                                  </label>                     
+                                </td>
+              
+                                <td>
+                                  <label class="container-checkbox">FruitCup
+                                    <input type="checkbox" unchecked="unchecked">
+                                    <span class="checkmark"></span>
+                                  </label>                   
+                                </td>
+                            </tr>
+              
+              
+                            <tr>
+                                <td>
+                                  <label class="container-checkbox">Rye
+                                    <input type="checkbox" unchecked="unchecked">
+                                    <span class="checkmark"></span>
+                                  </label>
+                                  
+                                </td>
+              
+                                <td>
+                                  <label class="container-checkbox">Pumpernickel
+                                    <input type="checkbox" unchecked="unchecked">
+                                    <span class="checkmark"></span>
+                                  </label>
+                                  
+                                </td>
+              
+                            </tr>
+                            </table>
+              
+                          </div>
+          
+                  <div class="special-instruction">
+                    <p>Special Instructions</p>
+                      <textarea  rows="1" cols="50" style=" border: 2px solid orange; width: 33%; margin-top: -1%;"> </textarea>
+                  </div>
+                               
+               
+                             
+                  <a href='#'><button class="block1"> <span class="vl"></span>ADD TO CART</button></a>
+                      
+                      </div>
+                    </div>
+              
+    
+                                                                </ng-container>
+                                                                </div>
+                                                                </div>
+                                                              </div>
+                                                                </ng-template>
+  
+            <p style="font-size:13px;">{{items.Ingredients}}</p>
+            <div class="cost">{{items.Price}}</div>
+        </th>
+      </tr>
+      
+  
+      
+       
+          
+      </table>
+    </div>
+      <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+      
+      <div class="table2">
+        <table>
+          <th></th>
+          
+          <tr *ngFor="let items of dataVariable.allProducts ">
+            <th>
+         
+              {{items.ProductName}}<img style="" src="../assets/arrow-right-circle.png" (click)="openModal('Modal')" class="arrow"> <br>
+                <ng-template #modal ng-app="myApp"  ng-controller="aboutController as about"  let-c="close"  let-d="dismiss">
+                    <div class="view-modal">
+                  <div class="modal-whole"  >
+                        <div class="modal-body"  >
+                            <ng-container >
+                                <button type="button"  style="border:none !important;"  class="close"  aria-label="Close"  (click)="d('Cross click')">
+                                    <span aria-hidden="true">&times;</span>
+                                        </button>
+            <div class="container-fluid2">
+            
+                <div class="subcontainer">
+                    <div class="heading">My Usual</div>
+                    <div class="subheading">Choice of Breads,choice of meat,choice of eggs</div>
+                  </div>
+                      <div class="content">
+                          <div class="choice-of-egg">
+                            <p style="font-family: 'Life Savers', cursive;">Choice of egg</p>
+                          </div>
+                          <div class="checkbox-1">
+                            <table class="table12">
+                              <tr style="padding-bottom:1%">
+                                <td>
+                                  <label class="container-checkbox">Over Easy
+                                    <input type="checkbox" unchecked="unchecked">
+                                    <span class="checkmark"></span>
+                                  </label>             
+                                </td>
+              
+                                <td>
+                                  <label class="container-checkbox">Poached
+                                    <input type="checkbox"  unchecked="unchecked">
+                                    <span class="checkmark"></span>
+                                  </label>
+                                </td>
+              
+                                <td>
+                                  <label class="container-checkbox">No Eggs
+                                    <input type="checkbox"  unchecked="unchecked">
+                                    <span class="checkmark"></span>
+                                  </label>                  
+                                </td>
+                            </tr>
+                              
+              
+                            <tr>
+                                <td>
+                                  <label class="container-checkbox">Scrambled
+                                    <input type="checkbox"  unchecked="unchecked">
+                                    <span class="checkmark"></span>
+                                  </label>                  
+                                </td>
+              
+                                <td>
+                                  <label class="container-checkbox">Gluten Free
+                                    <input type="checkbox"  unchecked="unchecked">
+                                    <span class="checkmark"></span>
+                                  </label>                     
+                                </td>
+              
+                                <td>
+                                  <label class="container-checkbox">FruitCup
+                                    <input type="checkbox"  unchecked="unchecked">
+                                    <span class="checkmark"></span>
+                                  </label>                   
+                                </td>
+                            </tr>
+              
+              
+                            <tr>
+                                <td>
+                                  <label class="container-checkbox">Boiled
+                                    <input type="checkbox"  unchecked="unchecked">
+                                    <span class="checkmark"></span>
+                                  </label>
+                                  
+                                </td>
+              
+                                <td>
+                                  <label class="container-checkbox">Egg Whites
+                                    <input type="checkbox"  unchecked="unchecked">
+                                    <span class="checkmark"></span>
+                                  </label>
+                                  
+                                </td>
+              
+                            </tr>
+                            </table>
+              
+                          </div>
+              
+              
+                          <div class="choice-of-meat">
+                              <p>Choice of Meat</p>
+                            </div>
+                            <div class="checkbox-2">
+                              <table >
+                                <tr>
+                                  <td>
+                                    <label class="container-checkbox">Bacon
+                                      <input type="checkbox"  unchecked="unchecked">
+                                      <span class="checkmark"></span>
+                                    </label>             
+                                  </td>
+                
+                                  <td>
+                                    <label class="container-checkbox">Sausage
+                                      <input type="checkbox"  unchecked="unchecked">
+                                      <span class="checkmark"></span>
+                                    </label>
+                                  </td>
+                
+                                  <td>
+                                    <label class="container-checkbox">FruitCup
+                                      <input type="checkbox"  unchecked="unchecked">
+                                      <span class="checkmark"></span>
+                                    </label>                  
+                                  </td>
+                              </tr>
+                                
+                
+                              <tr>
+                                  <td>
+                                    <label class="container-checkbox">Ham
+                                      <input type="checkbox"  unchecked="unchecked">
+                                      <span class="checkmark"></span>
+                                    </label>                  
+                                  </td>
+                
+                                  <td>
+                                    <label class="container-checkbox">No meat
+                                      <input type="checkbox"  unchecked="unchecked">
+                                      <span class="checkmark"></span>
+                                    </label>                     
+                                  </td>
+                              </tr>
+                
+                
+                              
+                              </table>
+                
+                            </div>
+              
+              
+                            <div class="choice-of-toast">
+                                <p>Choice of toast</p>
+                              </div>
+                              <div class="checkbox-3">
+                                <table >
+                                  <tr>
+                                    <td>
+                                      <label class="container-checkbox">Italian
+                                        <input type="checkbox"  unchecked="unchecked">
+                                        <span class="checkmark"></span>
+                                      </label>             
+                                    </td>
+                  
+                                    <td>
+                                      <label class="container-checkbox">7Grain
+                                        <input type="checkbox"  unchecked="unchecked">
+                                        <span class="checkmark"></span>
+                                      </label>
+                                    </td>
+                  
+                                    <td>
+                                      <label class="container-checkbox">No Toast
+                                        <input type="checkbox"  unchecked="unchecked">
+                                        <span class="checkmark"></span>
+                                      </label>                  
+                                    </td>
+                                </tr>
+                                  
+                  
+                                <tr>
+                                    <td>
+                                      <label class="container-checkbox">Asiago
+                                        <input type="checkbox"  unchecked="unchecked">
+                                        <span class="checkmark"></span>
+                                      </label>                  
+                                    </td>
+                  
+                                    <td>
+                                      <label class="container-checkbox">Cinnamon swirl
+                                        <input type="checkbox"  unchecked="unchecked">
+                                        <span class="checkmark"></span>
+                                      </label>                     
+                                    </td>
+                  
+                                    <td>
+                                      <label class="container-checkbox">FruitCup
+                                        <input type="checkbox"  unchecked="unchecked">
+                                        <span class="checkmark"></span>
+                                      </label>                   
+                                    </td>
+                                </tr>
+                  
+                  
+                                <tr>
+                                    <td>
+                                      <label class="container-checkbox">Rye
+                                        <input type="checkbox"  unchecked="unchecked">
+                                        <span class="checkmark"></span>
+                                      </label>
+                                      
+                                    </td>
+                  
+                                    <td>
+                                      <label class="container-checkbox">Pumpernickel
+                                        <input type="checkbox"  unchecked="unchecked">
+                                        <span class="checkmark"></span>
+                                      </label>
+                                      
+                                    </td>
+                  
+                                </tr>
+                                </table>
+                  
+                              </div>
+              
+                      <div class="special-instruction">
+                        <p>Special Instructions</p>
+                          <textarea  rows="1" cols="50" style=" border: 2px solid orange; width: 33%; margin-top: -1%;"> </textarea>
+                      </div>
+                                   
+                                 
+                      <a href='#'><button class="block1">$1.50 <span class="vl"></span>ADD TO CART</button></a>
+                          
+                          </div>
+                        </div>
+                  
+        
+                                                                    </ng-container>
+                                                                    </div>
+                                                                    </div>
+                                                                  </div>
+                                                                    </ng-template>
+      
+                <p style="font-size:13px;">{{items.Ingredients}}</p>
+                <div class="cost">{{items.Price}}</div>
+            </th>
+          </tr>
+        
+           
+             
+              </table>
+      </div>
+
+    </body>
+  
