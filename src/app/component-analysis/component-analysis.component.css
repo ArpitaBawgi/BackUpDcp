@@ -1,0 +1,333 @@
+body {
+    margin: -7px !important;
+}
+
+.left {
+    width: 75px;
+    height: 100%;
+    background-color: #e9e9e9;
+    box-shadow: -1px 1px 5px 5px rgba(0, 0, 0, 0.84);
+    white-space: nowrap;
+    transition: width 0.5s;
+    position: fixed;
+    z-index: 9999;
+}
+
+.itm {
+    overflow: hidden;
+    transition: width 0.5s
+}
+
+.left ul {
+    padding: 0;
+    list-style-type: none;
+    text-align: left;
+}
+
+.left li {
+    width: auto;
+    height: 60px;
+    line-height: 50px;
+    padding-left: 16px;
+}
+
+.left li:hover {
+    background: #bec2c4;
+}
+
+.left:hover {
+    width: 177px;
+    background-color: #e9e9e9;
+    box-shadow: -1px 1px 5px 5px rgba(0, 0, 0, 0.84);
+}
+
+.left .item-menu {
+    height: 60px;
+    overflow: hidden;
+}
+
+.left .item-menu.layer:hover {
+    background-color: #e9e9e9;
+}
+
+.left .item-menu.layer {
+    height: 100px;
+    margin-top: -15px;
+    background-color: #12abdb;
+    overflow: hidden;
+}
+
+.left a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+span.menu {
+    padding-left: 6px;
+}
+
+.promhead {
+    width: 100%;
+    float: right;
+    list-style-type: none;
+    margin: 0;
+    padding: 6px;
+    height: 88px;
+    overflow: hidden;
+    background-color: #333333f2;
+    font-weight: bold;
+}
+
+h1.mainhead {
+    color: #ffffff;
+    display: inline;
+    float: left;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Fjalla One', sans-serif !important;
+}
+
+img.headshot {
+    float: right;
+    width: 24px;
+    height: 24px;
+    margin: 14px;
+    padding-top: 8px;
+}
+
+img.headshot1 {
+    float: right;
+    width: 6%;
+    margin: 14px;
+}
+
+h4.heading5 {
+    float: left;
+    color: #404040;
+    width: 65%;
+    margin-left: 170px;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: 'Fjalla One', sans-serif !important;
+}
+
+@media screen and (min-width: 990px) and (max-width: 1025px) {
+    h4.heading5 {
+        margin-left: 200px;
+        font-size: bold;
+    }
+}
+
+@media screen and (min-width: 1026px) and (max-width: 1400px) {
+    h4.heading5 {
+        margin-left: 275px;
+    }
+}
+
+.container {
+    border: none !important;
+}
+
+.oandt {
+    display: inline-block;
+    margin-top: 30px;
+}
+
+.tandf {
+    display: inline-block;
+    margin-top: 30px;
+}
+
+.charts {
+    width: 75%;
+    float: right;
+}
+
+h2.comp {
+    color: #404040;
+}
+
+.daates {
+    margin-right: 10px;
+}
+
+h3.sec3head {
+    font-family: 'Fjalla One', sans-serif !important;
+    color: #606060;
+}
+
+h2.sec2head {
+    font-family: 'Fjalla One', sans-serif !important;
+    float: left;
+    display: block;
+}
+
+.inlinetable {
+    font-family: 'Fjalla One', sans-serif !important;
+    border: 1px solid #606060;
+    margin-left: 7px;
+}
+
+.section1 {
+    font-family: 'Fjalla One', sans-serif !important;
+    display: inline-block;
+    width: 12%;
+    float: right;
+    margin-left: 7px;
+}
+
+.section2 {
+    font-family: 'Fjalla One', sans-serif !important;
+    display: inline-block;
+    width: 12%;
+    float: right;
+    border-right: 1px solid #606060;
+    margin-left: 7px;
+}
+
+.section3 {
+    font-family: 'Fjalla One', sans-serif !important;
+    display: inline-block;
+    width: 12%;
+    float: right;
+    border-right: 1px solid #606060;
+    margin-left: 7px;
+}
+
+.section4 {
+    font-family: 'Fjalla One', sans-serif !important;
+    display: inline-block;
+    width: 12%;
+    float: right;
+    border-right: 1px solid #606060;
+    margin-left: 7px;
+}
+
+.section5 {
+    font-family: 'Fjalla One', sans-serif !important;
+    display: inline-block;
+    width: 12%;
+    float: right;
+    border-right: 1px solid #606060;
+    margin-left: 7px;
+}
+
+.section6 {
+    font-family: 'Fjalla One', sans-serif !important;
+    display: inline-block;
+    width: 12%;
+    float: right;
+    border-right: 1px solid #606060;
+    margin-left: 7px;
+}
+
+@media screen and (min-width: 1030px) and (max-width: 1400px) {
+    .section1,
+    .section2,
+    .section3,
+    .section4,
+    .section5,
+    .section6 {
+        width: 14%;
+    }
+}
+
+.section1:first-child {
+    border: none !important;
+}
+
+img.logo {
+    margin-right: 10px;
+    margin-left: 195px;
+    display: inline;
+    width: 95px;
+    margin-top: 7px;
+    height: 55px;
+    border: 0;
+    float: left;
+}
+
+h5.fuel {
+    text-transform: uppercase;
+    font-size: 16px;
+    color: #404040;
+    margin: 10px 0px;
+    font-weight: bold;
+}
+
+p.diff {
+    font-size: 12px;
+    color: #606060;
+}
+
+p.code1 {
+    font-size: 12px;
+    margin: 6px 0px;
+}
+
+p.code2 {
+    font-size: 12px;
+    margin: 6px 0px;
+}
+
+.tp {
+    text-align: center;
+    width: 85%;
+    float: right;
+    margin-top: 22px;
+    margin-bottom: 20px;
+}
+
+h2.promotionss {
+    text-transform: uppercase;
+    float: left;
+    color: #0070ad;
+    font-size: 28px;
+    font-weight: bold;
+    font-family: 'Fjalla One', sans-serif !important;
+    display: inline;
+    margin-left: 65px;
+}
+
+h2.promo {
+    text-transform: uppercase;
+    float: left;
+    color: #0070ad;
+    font-size: 28px;
+    font-weight: bold;
+    font-family: 'Fjalla One', sans-serif !important;
+    display: inline;
+}
+
+.artbox {
+    width: 70px;
+    height: 70px;
+    float: right;
+    background-color: #12abdb;
+    border: 1px solid #12abdb;
+    -webkit-box-shadow: -2px 4px 17px 1px rgba(0, 0, 0, 0.38);
+    box-shadow: -2px 4px 17px 1px rgba(0, 0, 0, 0.38);
+}
+
+.graphss {
+    width: 450px;
+    height: 250px;
+    margin: 0px 6px;
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1200px) {
+    .graphss {
+        width: 350px;
+    }
+}
+
+@media screen and (min-width: 1201px) and (max-width: 1400px) {
+    .graphss {
+        width: 410px;
+    }
+}
+
+.form-control {
+    width: 18%;
+}

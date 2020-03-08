@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One');
+body {
+    font-family: 'Ubuntu', sans-serif !important;
+    margin: 0 !important;
+}
+
+.modal-dialog {
+    top: 20% !important;
+    right: 10%;
+    width: 600%;
+}
+
+.modal-dialog1 {
+    top: 0% !important;
+    left: 35%;
+    width: 150%;
+}

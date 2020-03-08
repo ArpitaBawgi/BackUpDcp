@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body background="../assets/images/hexBG.jpg" class="body-style">
+    <ul>
+        <a href="#">
+            <img class="capglogo" src="../assets/images/J18242 Capgemini Digital Cloud Platform logo_v2.png">
+        </a>
+    </ul>
+
+
+    <div class="container-fluid">
+        <h3>IOT PREDICTIVE MAINTENANCE</h3>
+        <form (ngSubmit)="submit()">
+
+            <div class="form-group">
+                <input type="text" class="form-control" formControlName="username" id="email" autocomplete="off" placeholder="Username">
+            </div>
+            <br>
+
+            <div class="form-group">
+                <input type="password" class="form-control" formControlName="password" id="pwd" autocomplete="off" placeholder="Password">
+            </div>
+            <br>
+
+            <div id="choice">
+                <div class="checkbox">
+                    <label><input type="checkbox" style="font-weight:bold;" name="remember"> Remember me</label>
+                </div>
+                <a id="forgot" href="#">Forgot Password?</a>
+
+            </div>
+            <a>
+                <button type="submit" id="signin" class="btn btn-default" (click)=submit()>log in</button>
+            </a>
+
+
+        </form>
+
+
+    </div>
+
+</body>
+
+
+<router-outlet></router-outlet>

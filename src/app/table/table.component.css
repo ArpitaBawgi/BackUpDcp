@@ -1,0 +1,367 @@
+th {
+    color: #12abdb;
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-size: 12px;
+    border-bottom: 2px solid #404040;
+}
+
+table.comphis {
+    width: 90%;
+    float: right;
+    position: relative;
+}
+
+textarea.filter {
+    height: 18px;
+    width: 80px;
+    border: 1px solid #12abdb;
+}
+
+img.search {
+    float: right;
+    display: inline-flex;
+}
+
+td {
+    border-bottom: 1px solid #606060;
+    font-family: 'PT Sans Narrow', sans-serif;
+}
+
+th:first-child {
+    border-right: 1px solid #606060;
+}
+
+td:first-child {
+    border-right: 1px solid #606060;
+}
+
+
+/*first line*/
+
+img.circle {
+    position: absolute;
+    top: 55%;
+    right: 10%;
+    width: 15px;
+    height: 15px;
+}
+
+img.line {
+    width: 40%;
+    height: 17px;
+    position: absolute;
+    left: 40%;
+    top: 55%;
+}
+
+@media screen and (min-width: 768px) and (max-width:850px) {
+    img.circle,
+    img.line {
+        top: 32.5%;
+    }
+}
+
+@media screen and (min-width: 990px) and (max-width:1024px) {
+    img.circle,
+    img.line {
+        top: 32.5%;
+    }
+}
+
+@media screen and (min-width: 1380px) and (max-width:1400px) {
+    img.circle,
+    img.line {
+        top: 33%;
+    }
+}
+
+@media screen and (min-width: 1099px) and (max-width:1210px) {
+    img.circle,
+    img.line {
+        top: 32.5%;
+    }
+}
+
+@media screen and (min-width: 1095px) and (max-width:1098px) {
+    img.circle,
+    img.line {
+        top: 27%;
+    }
+}
+
+
+/*second line*/
+
+img.square {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    left: 40%;
+    top: 60%;
+}
+
+img.line1 {
+    width: 30%;
+    height: 17px;
+    position: absolute;
+    left: 60%;
+    top: 60%;
+}
+
+@media screen and (min-width: 768px) and (max-width:850px) {
+    img.square,
+    img.line1 {
+        top: 35%;
+    }
+}
+
+@media screen and (min-width: 990px) and (max-width:1024px) {
+    img.square,
+    img.line1 {
+        top: 38%;
+    }
+}
+
+@media screen and (min-width: 1099px) and (max-width:1210px) {
+    img.square,
+    img.line1 {
+        top: 35%;
+    }
+}
+
+@media screen and (min-width: 1380px) and (max-width:1400px) {
+    img.square,
+    img.line1 {
+        top: 35.5%;
+    }
+}
+
+@media screen and (min-width: 1095px) and (max-width:1098px) {
+    img.square,
+    img.line1 {
+        top: 29.5%;
+    }
+}
+
+
+/*third line*/
+
+img.line2 {
+    width: 50%;
+    height: 17px;
+    position: absolute;
+    left: 50%;
+    top: 64%;
+}
+
+@media screen and (min-width: 768px) and (max-width:850px) {
+    img.line2 {
+        top: 37.5%;
+    }
+}
+
+@media screen and (min-width: 1380px) and (max-width:1400px) {
+    img.line2 {
+        top: 38%;
+    }
+}
+
+@media screen and (min-width: 1095px) and (max-width:1210px) {
+    img.line2 {
+        top: 38%;
+    }
+}
+
+@media screen and (min-width: 990px) and (max-width:1024px) {
+    img.line2 {
+        top: 35%;
+    }
+}
+
+
+/*fourth line*/
+
+img.line3 {
+    width: 20%;
+    height: 17px;
+    position: absolute;
+    left: 40%;
+    top: 69%;
+}
+
+img.square1 {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    right: 30%;
+    top: 69%;
+}
+
+img.circle1 {
+    position: absolute;
+    right: 20%;
+    top: 69%;
+    width: 15px;
+    height: 15px;
+}
+
+@media screen and (min-width: 768px) and (max-width:850px) {
+    img.line3,
+    img.square1,
+    img.circle1 {
+        top: 40%;
+    }
+}
+
+@media screen and (min-width: 990px) and (max-width:1024px) {
+    img.line3,
+    img.square1,
+    img.circle1 {
+        top: 40.5%;
+    }
+}
+
+@media screen and (min-width: 1380px) and (max-width:1400px) {
+    img.line3,
+    img.square1,
+    img.circle1 {
+        top: 41%;
+    }
+}
+
+@media screen and (min-width: 1095px) and (max-width:1210px) {
+    img.line3,
+    img.square1,
+    img.circle1 {
+        top: 40.5%;
+    }
+}
+
+
+/*fifth line*/
+
+img.line4 {
+    width: 30%;
+    height: 17px;
+    position: absolute;
+    left: 65%;
+    top: 73%;
+}
+
+@media screen and (min-width: 768px) and (max-width:850px) {
+    img.line4 {
+        top: 43%;
+    }
+}
+
+@media screen and (min-width: 990px) and (max-width:1024px) {
+    img.line4 {
+        top: 43%;
+    }
+}
+
+@media screen and (min-width: 1380px) and (max-width:1400px) {
+    img.line4 {
+        top: 43.5%;
+    }
+}
+
+@media screen and (min-width: 1095px) and (max-width:1210px) {
+    img.line4 {
+        top: 43%;
+    }
+}
+
+
+/*sixth line*/
+
+img.line5 {
+    width: 45%;
+    height: 17px;
+    position: absolute;
+    left: 50%;
+    top: 85%;
+}
+
+img.square2 {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    left: 45%;
+    top: 85%;
+}
+
+@media screen and (min-width: 768px) and (max-width:850px) {
+    img.line5,
+    img.square2 {
+        top: 45%;
+    }
+}
+
+@media screen and (min-width: 990px) and (max-width:1024px) {
+    img.line5,
+    img.square2 {
+        top: 45.5%;
+    }
+}
+
+@media screen and (min-width: 1380px) and (max-width:1400px) {
+    img.line5,
+    img.square2 {
+        top: 46%;
+    }
+}
+
+@media screen and (min-width: 1095px) and (max-width:1210px) {
+    img.line5,
+    img.square2 {
+        top: 45.5%;
+    }
+}
+
+
+/*seventh line*/
+
+img.line6 {
+    width: 15%;
+    height: 17px;
+    position: absolute;
+    left: 60%;
+    top: 92%;
+}
+
+img.square3 {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    left: 55%;
+    top: 92%;
+}
+
+@media screen and (min-width: 768px) and (max-width:850px) {
+    img.line6,
+    img.square3 {
+        top: 48%;
+    }
+}
+
+@media screen and (min-width: 990px) and (max-width:1024px) {
+    img.line6,
+    img.square3 {
+        top: 48%;
+    }
+}
+
+@media screen and (min-width: 1380px) and (max-width:1400px) {
+    img.line6,
+    img.square3 {
+        top: 48.5%;
+    }
+}
+
+@media screen and (min-width: 1095px) and (max-width:1210px) {
+    img.line6,
+    img.square3 {
+        top: 48.5%;
+    }
+}

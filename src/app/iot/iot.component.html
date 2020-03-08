@@ -1,0 +1,891 @@
+<head>
+
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
+</head>
+
+<body>
+
+    <!--hamburger begins-->
+
+    <div class="row" style="font-family: 'Fjalla One', sans-serif !important;">
+        <div class="left ">
+            <ul>
+                <a href="#">
+                    <li class="item-menu layer">
+                        <span style="margin:0px 15px;"><img style="width:32px;height:32px;margin-top:25px;"
+                                src="../assets/images/layer.png"></span>
+                        <!--<span img src="C:\Users\smandre\Downloads\Seema Project\Images\Images_to_go\layer.png" style="padding:5px;background-color:pink;"></span>-->
+                        <span><img style="width:70%;" src="../assets/images/cornerPiece.png"></span>
+                    </li>
+                </a>
+                <a href="#">
+                    <li class="item-menu">
+                        <span style="margin:0px 15px;"><img style="margin-top:10px;width:32px;height:32px;"
+                                src="../assets/images/icon (8).png"></span>
+                        <a href="#"><span class="menu">Dashboard</span></a>
+                    </li>
+                </a>
+                <a href="#">
+                    <li class="item-menu">
+                        <span style="margin:0px 15px;"><img style="margin-top:10px;width:32px;height:32px;"
+                                src="../assets/images/teamwork (3).png"></span>
+                        <a href="#"><span style="color:#12abdb !important;" class="menu">Component Analysis</span></a>
+                    </li>
+                </a>
+                <a>
+                    <li class="item-menu">
+                        <span style="margin:0px 15px;"> <img style="margin-top:10px;width:32px;height:32px;"
+                                src="../assets/images/filter.png"></span>
+                        <a href="iot"><span class="menu">Filter</span></a>
+                    </li>
+                </a>
+                <a href="comphistory">
+                    <li class="item-menu">
+                        <span style="margin:0px 15px;"> <img style="margin-top:10px;width:32px;height:32px;"
+                                src="../assets/images/report (4).png"></span>
+                        <a href=""><span class="menu">Reports</span></a>
+                    </li>
+                </a>
+
+            </ul>
+        </div>
+        <!-- end left -->
+
+    </div>
+    <!--hamburger ends-->
+    <!--header starts-->
+    <div class="promhead">
+        <a href="header">
+            <img class="logo" src="../assets/images/newCloudHexLogo.png" style=""></a>
+        <a href="login-page">
+            <img class="headshot"  src="../assets/images/logout.png"  style=""></a>
+        <a href="#"> <img class="headshot1" src="../assets/images/Headshot 1.png" style="">
+
+        </a>
+        <h1 class="mainhead" style="font-family: 'Fjalla One', sans-serif !important;">IOT Predictive Maintenance</h1>
+
+    </div>
+
+    <div class="clr" style="font-family: 'Fjalla One', sans-serif !important;">
+        <h2 class="color" style="font-family: 'Fjalla One', sans-serif !important;">MANAGE FILTERS</h2>
+        <h3 class="tc" style="font-family: 'Fjalla One', sans-serif !important;font-size: 20px">Filters
+            <img style="height:3%; width:3%; margin-left: 90%;" src="../assets/images/plus.png" (click)="openModal()">
+
+        </h3>
+
+        <ng-template  class="modal-content" #modal ng-app="myApp"  ng-controller="aboutController as about"
+            _ngcontent-c1="modal-content"  let-c="close"  let-d="dismiss">
+
+            <div class="view-model1">
+
+                <div class="modal-body">
+
+                    <ng-container >
+                        <button type="button"  style="border:none !important;"  class="close"  aria-label="Close"
+                             (click)="d('Cross click')">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <img class="modalimg"  style=""  src="assets/images/cornerPiece.png">
+                        <p class="modalprom"  style=""> Create Filter</p>
+
+                        <table style="font-family: 'Fjalla One', sans-serif ;" class="table-filter">
+                            <tr class="cl1">
+                                <th style="width: 10%;">Filter Name</th> &nbsp;
+                                <th>Start Date</th>
+                                <th>End Date</th>
+                                <th>Unit Status</th>
+
+                            </tr>
+                            <tr class="title-border cl1">
+
+                                <td style="width: 20%;"><input type="text" class="form-control txt1"
+                                        [(ngModel)]="filterdata.filterName"> </td> &nbsp; &nbsp;
+                                <td><input type="date" style="width: 83%;" class="form-control txt1"
+                                        [(ngModel)]="filterdata.fromDate"></td>
+                                <td><input type="date" style="width: 83%;" class="form-control txt1"
+                                        [(ngModel)]="filterdata.toDate"></td>
+                                <td><input type="checkbox" style="height: 20px;width: 20px;"
+                                        (click)=" statusChangeNew()" [(ngModel)]="filterdata.filterBy.newUnit"> New
+                                    &nbsp; &nbsp;&nbsp;
+                                    <input type="checkbox" style="height: 20px;width: 20px;"
+                                        (click)=" statusChangeInstalled()"
+                                        [(ngModel)]="filterdata.filterBy.installedUnit"> Installed &nbsp; &nbsp;
+                                    <input type="checkbox" style="height: 20px;width: 20px;"
+                                        (click)=" statusChangeRemoved()" [(ngModel)]="filterdata.filterBy.removedUnit">
+                                    Removed
+                                </td>
+                            </tr>
+                        </table>
+                        <br>
+                        <table style=" float: left; ">
+                            <tr>
+                                <th style="width: 20px;"> Fleet Model</th>
+                            </tr>
+                            <tr>
+                                <td>Available</td>
+                                <td></td>
+                                <td>Selected</td>
+                            </tr>
+
+                            <tr>
+                                <td><input type="text" class="form-control txt1" style="height: 35px;"
+                                        [(ngModel)]="ans"></td>
+
+                                <td>
+
+                                </td>
+                                <td rowspan="2">
+                                    <div class="box">
+                                        <cdk-virtual-scroll-viewport style="height: 190px; width: 150px " itemSize="6">
+                                            <div class="example-box " *ngFor="let dat of fModel">
+                                                <div>
+                                                    {{ans}}
+                                                </div>
+
+                                            </div>
+                                        </cdk-virtual-scroll-viewport>
+
+                                    </div>
+                                </td>
+                            </tr>
+                            <!----------unique-->
+
+                            <tr>
+
+                                <td>
+
+                                    <div class="box">
+
+                                        <cdk-virtual-scroll-viewport style="height: 150px; width: 150px " itemSize="6">
+                                            <div class="example-box " *ngFor="let data of fModels "
+                                                (click)="selectFleet(data)">
+                                                <option> FleetModel{{data.fleetNo}}</option>
+                                            </div>
+                                        </cdk-virtual-scroll-viewport>
+
+                                    </div>
+                                </td>
+                                <td style="padding-bottom: 80px; padding-left: 10px;">
+                                    <img src="../assets/images/right-arrow-circular-button (1).png"
+                                        (click)="assignFleet()">
+                                    <br><br>
+                                    <img src="../assets/images/back-arrow-circular-symbol.png" (click)="assignFn1()">
+                                </td>
+                            </tr>
+
+                        </table>
+
+
+                        <table class="cls" style=" float: right;">
+                            <tr>
+                                <th style="width: 20px;">Sub-Fleet Number</th>
+                            </tr>
+                            <tr>
+                                <td>Available</td>
+                                <td></td>
+                                <td>Selected</td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" class="form-control txt1" style="height: 35px;"
+                                        [(ngModel)]="ans1"></td>
+
+                                <td>
+
+                                </td>
+                                <td rowspan="2">
+                                    <div class="box">
+                                        <cdk-virtual-scroll-viewport style="height: 190px; width: 150px " itemSize="6">
+                                            <div class="example-box " *ngFor="let dat of sModel">
+                                                <div>
+                                                    {{ans1}}
+                                                </div>
+
+                                            </div>
+                                        </cdk-virtual-scroll-viewport>
+
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+
+                                <td>
+                                    <ul class="list" style="border: 1px solid #0070ad;width:150px;">
+                                        <cdk-virtual-scroll-viewport style="height: 150px; " itemSize="6">
+                                            <div class="example-box " *ngFor="let data of fModels "
+                                                (click)="selectSubFleet(data)">
+                                                <option> Sub-Fleet Number{{data.subfleetNo}}</option>
+                                            </div>
+                                        </cdk-virtual-scroll-viewport>
+                                    </ul>
+                                </td>
+                                <td style="padding-bottom: 80px; padding-left: 10px;">
+                                    <img src="/assets/images/right-arrow-circular-button (1).png"
+                                        (click)="assignSubFleet()">
+                                    <br><br>
+                                    <img src="/assets/images/back-arrow-circular-symbol.png">
+                                </td>
+                            </tr>
+
+                        </table>
+                        <br><br> <br><br> <br><br> <br><br>
+                        <table style="float:left;">
+                            <tr>
+                                <th style="width: 20px;">ATA Number</th>
+                            </tr>
+                            <tr>
+                                <td>Available</td>
+                                <td></td>
+                                <td>Selected</td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" class="form-control txt1" style="height: 35px;"
+                                        [(ngModel)]="ans2"></td>
+
+                                <td>
+
+                                </td>
+                                <td rowspan="2">
+                                    <div class="box">
+                                        <cdk-virtual-scroll-viewport style="height: 190px; width: 150px " itemSize="6">
+                                            <div class="example-box " *ngFor="let dat of aModel">
+                                                <div>
+                                                    {{ans2}}
+                                                </div>
+
+                                            </div>
+                                        </cdk-virtual-scroll-viewport>
+
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+
+                                <td>
+                                    <ul class="list" style="border: 1px solid #0070ad;width:150px;">
+                                        <cdk-virtual-scroll-viewport style="height: 150px; " itemSize="6">
+                                            <div class="example-box " *ngFor="let data of fModels "
+                                                (click)="selectATA(data)">
+                                                <option> ATA Number{{data.ataSystemNo}}</option>
+                                            </div>
+                                        </cdk-virtual-scroll-viewport>
+                                    </ul>
+                                </td>
+                                <td style="padding-bottom: 80px; padding-left: 10px;">
+                                    <img src="/assets/images/right-arrow-circular-button (1).png" (click)="assignATA()">
+                                    <br><br>
+                                    <img src="/assets/images/back-arrow-circular-symbol.png">
+                                </td>
+                            </tr>
+
+                        </table>
+
+                        <table style=" float: right; ">
+                            <tr>
+                                <th style="width: 20px;">Tail Number</th>
+                            </tr>
+                            <tr>
+                                <td>Available</td>
+                                <td></td>
+                                <td>Selected</td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" class="form-control txt1" style="height: 35px;"
+                                        [(ngModel)]="ans3"></td>
+
+                                <td>
+
+                                </td>
+                                <td rowspan="2">
+                                    <div class="box">
+                                        <cdk-virtual-scroll-viewport style="height: 190px; width: 150px " itemSize="6">
+                                            <div class="example-box " *ngFor="let dat of tModel">
+                                                <div>
+                                                    {{ans3}}
+                                                </div>
+
+                                            </div>
+                                        </cdk-virtual-scroll-viewport>
+
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+
+                                <td>
+                                    <ul class="list" style="border: 1px solid #0070ad;width:150px;">
+                                        <cdk-virtual-scroll-viewport style="height: 150px; " itemSize="6">
+                                            <div class="example-box " *ngFor="let data of fModels "
+                                                (click)="selectTail(data)">
+                                                <option> Tail Number{{data.tailNo}}</option>
+                                            </div>
+                                        </cdk-virtual-scroll-viewport>
+                                    </ul>
+                                </td>
+                                <td style="padding-bottom: 80px; padding-left: 10px;">
+                                    <img src="/assets/images/right-arrow-circular-button (1).png"
+                                        (click)="assignTail()">
+                                    <br><br>
+                                    <img src="/assets/images/back-arrow-circular-symbol.png">
+                                </td>
+                            </tr>
+
+                        </table>
+
+
+
+
+
+
+
+                    </ng-container>
+                </div>
+            </div>
+
+            <footer>
+                <div class="buttonzone" style="width: 190%;">
+                    <div class="pop-up-button">
+                        <input style="background-color:#FA8072;margin-left: 60%; color: white;
+                border-radius: 5px;width: 11%;" type="submit" name="submit" value="Cancel"
+                             (click)="d('Cross click')">&nbsp;
+                        <input style="background-color: #12abdb; color: white;
+                border-radius: 5px;width: 11%;" type="submit" name="signup" value="Save" (click)="saveFilter()">&nbsp;
+                    </div>
+                </div>
+            </footer>
+
+        </ng-template>
+
+
+    </div>
+
+
+
+    <div class="container-fluid ">
+        <table style="font-family: 'Fjalla One', sans-serif ;" class="table-filter">
+            <tr class="cl1">
+                <th style="width: 10%;">Filter Name</th> &nbsp;
+                <th>Start Date</th>
+                <th>End Date</th> &nbsp;
+                <th>Unit Status</th> &nbsp;
+
+            </tr>
+            <tr class="title-border cl1">
+
+                <td style="width: 25%;"><input type="text" class="form-control txt1"></td> &nbsp; &nbsp; &nbsp; &nbsp;
+                <td><input type="date" style="width: 83%;" class="form-control txt1"></td>
+                <td><input type="date" style="width: 83%;" class="form-control txt1"></td>&nbsp; &nbsp;
+                <td>
+                    <form>
+                        <input type="checkbox" (click)="statusChangeNew1('new')" class="checkbox"
+                            style="width: 20px;height: 20px" (checked)="new"> New &nbsp; &nbsp;&nbsp;
+                        <input type="checkbox" (click)="statusChangeInstalled1('installed')" class="checkbox"
+                            style="width: 20px;height: 20px" (checked)="installed"> Installed &nbsp; &nbsp;
+                        <input type="checkbox" (click)="statusChangeRemoved1('removed')" class="checkbox"
+                            style="width: 20px;height: 20px" (checked)="removed"> Removed
+                    </form>
+                </td>
+
+            </tr>
+        </table>
+        <!-- <table class="searchbutton">
+                    <td>
+        
+                        <input title="Search" value="" type="submit" class="searchbutton">
+        
+                    </td>
+                </table> -->
+    </div>
+
+
+
+    <div class="container-fluid" id="tracking-homeDiv" style="z-index:-1;">
+
+        <table class="table" style="width:100%;font-family: 'Fjalla One', sans-serif !important;">
+            <thead>
+                <tr style="color: #12abdb">
+                    <th style="width: 35%;">Filter Name</th>
+                    <th style="width: 12%;">Start Date</th>
+                    <th style="width: 12%;">End Date</th>
+                    <th style="width: 20%;">Unit Status</th>
+                    <th style="width: 30%;">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- start of 1st row -->
+
+                <tr *ngFor="let dat of datavariable">
+                    <td>{{dat.filterName}}</td>
+                    <td>{{dat.toDate}}</td>
+                    <td>{{dat.fromDate}}</td>
+                    <td>
+                        <div *ngIf="dat.filterBy.newUnit">
+                            <div *ngIf="dat.filterBy.installedUnit; else third">
+                                New,Installed
+                            </div>
+
+                        </div>
+
+                        <ng-template #third>New</ng-template>
+
+                        <div *ngIf="dat.filterBy.removedUnit">
+                            Removed
+                        </div>
+                    </td>
+                    <!-- <div *ngIf="dat.filterBy.installedUnit">
+                                <td>Installed</td> 
+                            </div> -->
+
+
+
+
+                    <td> <a><img src="../assets/images/file.png" (click)="openModal3()"></a>
+                        &nbsp;&nbsp;&nbsp;
+                        <ng-template #modal3 ng-app="myApp"  ng-controller="aboutController as about"  let-c="close"
+                             let-d="dismiss">
+                            <div class="fileModal">
+                                <div class="modal-whole "  style=" font-family: 'Fjalla One' , sans-serif !important;">
+
+                                    <div class="modal-body"  >
+                                        <ng-container >
+                                            <button type="button"  style="border:none !important;"  class="close"
+                                                 aria-label="Close"  (click)="d('Cross click')">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                            <img class="modalimg-file"  style=""  src="assets/images/cornerPiece.png">
+                                            <p class="modalprom"  style=""> Create Report from Filter</p>
+
+                                            <div>
+                                                <form>
+                                                    Select a Report
+                                                    <br>
+                                                    <select value="select one..">
+
+                                                        <option>Report One</option>
+                                                        <option>Historical Removal Report</option>
+
+                                                    </select>
+                                                </form>
+                                            </div>
+                                            <a id="modalbtn"  type="button"  (click)="d('Cross click')"  style=""
+                                                 class="btn btn-primary">Create Report
+                                            </a>
+                                        </ng-container>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-template>
+
+                        <a><img src="../assets/images/view.png" (click)="openModal2(dat)"></a>&nbsp;&nbsp;&nbsp;
+                        <ng-template #modal2 ng-app="myApp"  ng-controller="aboutController as about"  let-c="close"
+                             let-d="dismiss">
+                            <div class="view-model">
+                                <div class="modal-body"  >
+                                    <ng-container >
+                                        <button type="button"  style="border:none !important;"  class="close"
+                                             aria-label="Close"  (click)="d('Cross click')">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        <img class="modalimg-view"  style=""  src="assets/images/cornerPiece.png">
+                                        <p class="modalprom"  style=""> View Filter</p>
+                                        <div>
+                                            <table style="width:100%; width: 100%;">
+                                                <tr>
+                                                    <th>Filter Name</th>
+                                                    <th>Start Date</th>
+                                                    <th>End Date</th>
+                                                    <th>Unit Status</th>
+                                                </tr>
+                                                <tr>
+                                                    <td>{{filterTemp.filterName}}</td>
+                                                    <td>{{filterTemp.toDate}}</td>
+                                                    <td>{{filterTemp.fromDate}}</td>
+                                                    <td>
+                                                        <div *ngIf="filterTemp.filterBy.newUnit">
+                                                            <div *ngIf="filterTemp.filterBy.installedUnit; else third">
+                                                                New,Installed
+                                                            </div>
+
+                                                        </div>
+
+                                                        <ng-template #third>New</ng-template>
+
+                                                        <div *ngIf="filterTemp.filterBy.removedUnit">
+                                                            Removed
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                            </table>
+                                            <br><br><br><br>
+
+                                            <table>
+                                                <tr>
+                                                    <th style="width:75%;">Fleet Model</th>
+                                                    <th>Sub Fleet Number</th>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div *ngFor="let dat1 of fModel">
+                                                            {{dat1}}
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div *ngFor="let dat1 of sModel">
+                                                            {{dat1}}
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                                <br><br><br><br><br><br><br><br>
+                                                <tr>
+                                                    <th>ATA Number</th>
+                                                    <th>Tail Number</th>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div *ngFor="let dat1 of aModel">
+                                                            {{dat1}}
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div *ngFor="let dat1 of tModel">
+                                                            {{dat1}}
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <br><br><br><br>
+
+                                        </div>
+
+                                    </ng-container>
+
+                                </div>
+                            </div>
+                            <footer>
+                                <div class="buttonzone">
+                                    <div class="pop-up-button">
+                                        <input style="background-color:#FA8072;border-radius: 5px;width: 16%;"
+                                            type="submit" name="submit" value="Cancel">&nbsp;
+                                        <input style="background-color:#FA8072;border-radius: 5px;width: 16%;"
+                                            type="submit" name="signup" value="Delete">&nbsp;
+                                        <input style="background-color:lightskyblue;border-radius: 5px;width: 16%;"
+                                            type="submit" name="signup" value="Create Report">&nbsp;
+                                        <input style="background-color:lightskyblue;border-radius: 5px;width: 16%;"
+                                            type="submit" name="signup" value="Copy">&nbsp;
+                                        <input style="background-color:lightskyblue;border-radius: 5px;width: 16%;"
+                                            type="submit" name="signup" value="Edit" (click)="openModal4()"
+                                            (click)="d('Cross click')">&nbsp;
+                                    </div>
+                                </div>
+                            </footer>
+                        </ng-template>
+
+                        <a> <img src="../assets/images/compose.png" (click)="openModal4(dat)"></a>&nbsp;&nbsp;&nbsp;
+                        <ng-template  class="modal-content" #modal4 ng-app="myApp"
+                             ng-controller="aboutController as about" _ngcontent-c1="modal-content"  let-c="close"
+                             let-d="dismiss">
+
+                            <div class="view-model1 ">
+                        <div class=" modal-body">
+                                <ng-container >
+                                    <button type="button"  style="border:none !important;"  class="close"
+                                         aria-label="Close"  (click)="d('Cross click')">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    <img class="modalimg"  style=""  src="assets/images/cornerPiece.png">
+                                    <p class="modalprom"  style=""> Edit Filter</p>
+
+                                    <table style="font-family: 'Fjalla One', sans-serif ;" class="table-filter">
+                                        <tr class="cl1">
+                                            <th style="width: 10%;">Filter Name</th> &nbsp;
+                                            <th>Start Date</th>
+                                            <th>End Date</th>
+                                            <th>Unit Status</th>
+                                        </tr>
+                                        <tr class="title-border cl1">
+
+                                            <td style="width: 20%;"><input type="text" class="form-control txt1"
+                                                    value="{{filterTemp.filterName}}"
+                                                    [(ngModel)]="filterTemp.filterName"></td> &nbsp; &nbsp;
+                                            <td><input type="date" style="width: 83%;" class="form-control txt1"
+                                                    value="{{filterTemp.toDate}}" [(ngModel)]="filterTemp.toDate"></td>
+                                            <td><input type="date" style="width: 83%;" class="form-control txt1"
+                                                    value="{{filterTemp.fromDate}}" [(ngModel)]="filterTemp.fromDate">
+                                            </td>
+                                            <td><input type="checkbox" style="height: 20px;width: 20px;"
+                                                    (click)=" statusChangeNew()"
+                                                    [checked]="filterTemp.filterBy.newUnit" [(ngModel)]="filterTemp.filterBy.newUnit">New &nbsp; &nbsp;&nbsp;
+                                                <input type="checkbox" style="height: 20px;width: 20px;"
+                                                    (click)=" statusChangeInstalled()"
+                                                    [checked]="filterTemp.filterBy.installedUnit" [(ngModel)]="filterTemp.filterBy.installedUnit"> Installed &nbsp;
+                                                &nbsp;
+                                                <input type="checkbox" style="height: 20px;width: 20px;"
+                                                    (click)=" statusChangeRemoved()"
+                                                    [checked]="filterTemp.filterBy.removedUnit" [(ngModel)]="filterTemp.filterBy.removedUnit"> Removed
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <br>
+                                    <table style=" float: left; ">
+                                        <tr>
+                                            <th style="width: 20px;">Fleet Model</th>
+                                        </tr>
+                                        <tr>
+                                            <td>Available</td>
+                                            <td></td>
+                                            <td>Selected</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" class="form-control txt1" style="height: 35px;"
+                                                    [(ngModel)]="ans"></td>
+
+                                            <td>
+
+                                            </td>
+                                            <td rowspan="2">
+                                                <div class="box">
+                                                    <cdk-virtual-scroll-viewport style="height: 190px; width: 150px "
+                                                        itemSize="6">
+                                                        <div class="example-box " *ngFor="let dat1 of fModel"  (click)="reselectFleet(dat1)">
+                                                            <div>
+                                                                {{dat1}}
+                                                            </div>
+
+                                                        </div>
+                                                    </cdk-virtual-scroll-viewport>
+
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+
+                                            <td>
+                                                <div class="box">
+
+                                                    <cdk-virtual-scroll-viewport style="height: 150px; width: 150px "
+                                                        itemSize="6">
+                                                        <div class="example-box " *ngFor="let data of fModels "
+                                                            (click)="selectFleet(data)">
+                                                            <option> FleetModel{{data.fleetNo}}
+                                                            </option>
+                                                        </div>
+                                                    </cdk-virtual-scroll-viewport>
+
+                                                </div>
+                                            </td>
+                                            <td style="padding-bottom: 80px; padding-left: 10px;">
+                                                <img src="/assets/images/right-arrow-circular-button (1).png"
+                                                    (click)="assignFleet()">
+                                                <br><br>
+                                                <img src="/assets/images/back-arrow-circular-symbol.png" (click)="reassignFleet()">
+                                            </td>
+                                        </tr>
+
+                                    </table>
+
+
+                                    <table class="cls" style=" float: right;">
+                                        <tr>
+                                            <th style="width: 20px;">Sub-Fleet Number </th>
+                                        </tr>
+                                        <tr>
+                                            <td>Available</td>
+                                            <td></td>
+                                            <td>Selected</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" class="form-control txt1" style="height: 35px;"
+                                                    [(ngModel)]="ans1"></td>
+
+                                            <td></td>
+
+                                            <td rowspan="2">
+                                                <div class="box">
+                                                    <cdk-virtual-scroll-viewport style="height: 190px; width: 150px "
+                                                        itemSize="6">
+                                                        <div class="example-box " *ngFor="let dat1 of sModel" (click)="reselectSubFleet(dat1)">
+                                                            <div>
+                                                                {{dat1}}
+                                                            </div>
+
+                                                        </div>
+                                                    </cdk-virtual-scroll-viewport>
+
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+
+                                            <td>
+
+
+                                                <div class="box">
+
+                                                    <cdk-virtual-scroll-viewport style="height: 150px; width: 150px "
+                                                        itemSize="6">
+                                                        <div class="example-box " *ngFor="let data of fModels "
+                                                            (click)="selectSubFleet(data)">
+                                                            <option> Sub-Fleet Number{{data.subfleetNo}}</option>
+                                                        </div>
+                                                    </cdk-virtual-scroll-viewport>
+
+                                                </div>
+
+
+                                            </td>
+                                            <td style="padding-bottom: 80px; padding-left: 10px;">
+                                                <img src="/assets/images/right-arrow-circular-button (1).png"
+                                                    (click)="assignSubFleet()">
+                                                <br><br>
+                                                <img src="/assets/images/back-arrow-circular-symbol.png" (click)="reassignSubfleet()">
+                                            </td>
+                                        </tr>
+
+                                    </table>
+                                    <br><br>
+                                    <table style="float:left;">
+                                        <tr>
+                                            <th style="width: 20px;">ATA Number</th>
+                                        </tr>
+                                        <tr>
+                                            <td>Available</td>
+                                            <td></td>
+                                            <td>Selected</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" class="form-control txt1" style="height: 35px;"
+                                                    [(ngModel)]="ans2"></td>
+
+                                            <td>
+
+                                            </td>
+                                            <td rowspan="2">
+                                                <div class="box">
+                                                    <cdk-virtual-scroll-viewport style="height: 190px; width: 150px "
+                                                        itemSize="6">
+                                                        <div class="example-box " *ngFor="let dat1 of aModel">
+                                                            <div>
+                                                                {{dat1}}
+                                                            </div>
+
+                                                        </div>
+                                                    </cdk-virtual-scroll-viewport>
+
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+
+                                            <td>
+                                                <div class="box">
+
+                                                    <cdk-virtual-scroll-viewport style="height: 150px; width: 150px "
+                                                        itemSize="6">
+                                                        <div class="example-box " *ngFor="let data of fModels "
+                                                            (click)="selectATA(data)">
+                                                            <option> ATA Number{{data.ataSystemNo}}</option>
+                                                        </div>
+                                                    </cdk-virtual-scroll-viewport>
+
+                                                </div>
+                                            </td>
+                                            <td style="padding-bottom: 80px; padding-left: 10px;">
+                                                <img src="/assets/images/right-arrow-circular-button (1).png"
+                                                    (click)="assignATA()">
+                                                <br><br>
+                                                <img src="/assets/images/back-arrow-circular-symbol.png">
+                                            </td>
+                                        </tr>
+
+                                    </table>
+
+                                    <table style=" float: right; ">
+                                        <tr>
+                                            <th style="width: 20px;">Tail Number</th>
+                                        </tr>
+                                        <tr>
+                                            <td>Available</td>
+                                            <td></td>
+                                            <td>Selected</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" class="form-control txt1" style="height: 35px;"
+                                                    [(ngModel)]="ans3"></td>
+
+                                            <td>
+
+                                            </td>
+                                            <td rowspan="2">
+                                                <div class="box">
+                                                    <cdk-virtual-scroll-viewport style="height: 190px; width: 150px "
+                                                        itemSize="6">
+                                                        <div class="example-box " *ngFor="let dat1 of tModel" (click)="reselectTail(dat1)">
+                                                            <div>
+                                                                {{dat1}}
+                                                            </div>
+
+                                                        </div>
+                                                    </cdk-virtual-scroll-viewport>
+
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+
+                                            <td>
+                                                <div class="box">
+
+                                                    <cdk-virtual-scroll-viewport style="height: 150px; width: 150px "
+                                                        itemSize="6">
+                                                        <div class="example-box " *ngFor="let data of fModels "
+                                                            (click)="selectTail(data)">
+                                                            <option> Tail Number{{data.tailNo}}</option>
+                                                        </div>
+                                                    </cdk-virtual-scroll-viewport>
+
+                                                </div>
+                                            </td>
+                                            <td style="padding-bottom: 80px; padding-left: 10px;">
+                                                <img src="/assets/images/right-arrow-circular-button (1).png"
+                                                    (click)="assignTail()">
+                                                <br><br>
+                                                <img src="/assets/images/back-arrow-circular-symbol.png" (click)="reassignTail()">
+                                            </td>
+                                        </tr>
+
+                                    </table>
+                                </ng-container>
+                            </div>
+    </div>
+    <footer>
+        <div class="buttonzone" style="width: 190%;">
+            <div class="pop-up-button">
+                <input style="background-color:#FA8072;margin-left: 60%; color: white;
+                        border-radius: 5px;width: 11%;" type="submit" name="submit" value="Cancel"
+                    (click)="d('Cross click')">&nbsp;
+                <input style="background-color: #12abdb; color: white;
+                        border-radius: 5px;width: 11%;" type="submit" name="signup" value="Save"
+                    (click)="updateFilter()">&nbsp;
+            </div>
+        </div>
+    </footer>
+    </ng-template>
+    <a> <img src="../assets/images/copy.png"></a>&nbsp;&nbsp;&nbsp;
+    <a> <img src="../assets/images/trash.png"></a>&nbsp;&nbsp;&nbsp;
+
+    </td>
+    </tr>
+    </tbody>
+
+    </table>
+
+
+    </div>
